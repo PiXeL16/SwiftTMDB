@@ -16,6 +16,7 @@
 		8355017C1B43345C00C8CC48 /* swifttmdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355017B1B43345C00C8CC48 /* swifttmdbTests.swift */; };
 		835501871B43345C00C8CC48 /* swifttmdbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835501861B43345C00C8CC48 /* swifttmdbUITests.swift */; };
 		837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8871B43597E008CBD5C /* InTheatersViewController.swift */; };
+		837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8891B4363A5008CBD5C /* PopularViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		835501861B43345C00C8CC48 /* swifttmdbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifttmdbUITests.swift; sourceTree = "<group>"; };
 		835501881B43345C00C8CC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837AE8871B43597E008CBD5C /* InTheatersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheatersViewController.swift; sourceTree = "<group>"; };
+		837AE8891B4363A5008CBD5C /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		E91BCDD88B524A45513D0A58 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				837AE8871B43597E008CBD5C /* InTheatersViewController.swift */,
+				837AE8891B4363A5008CBD5C /* PopularViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				835501691B43345C00C8CC48 /* SecondViewController.swift in Sources */,
+				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				835501651B43345C00C8CC48 /* AppDelegate.swift in Sources */,
 				835501671B43345C00C8CC48 /* FirstViewController.swift in Sources */,
 				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
