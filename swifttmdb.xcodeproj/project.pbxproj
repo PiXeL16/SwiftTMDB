@@ -15,6 +15,7 @@
 		8355016E1B43345C00C8CC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8355016D1B43345C00C8CC48 /* Assets.xcassets */; };
 		8355017C1B43345C00C8CC48 /* swifttmdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355017B1B43345C00C8CC48 /* swifttmdbTests.swift */; };
 		835501871B43345C00C8CC48 /* swifttmdbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835501861B43345C00C8CC48 /* swifttmdbUITests.swift */; };
+		837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8871B43597E008CBD5C /* InTheatersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		835501821B43345C00C8CC48 /* swifttmdbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swifttmdbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		835501861B43345C00C8CC48 /* swifttmdbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifttmdbUITests.swift; sourceTree = "<group>"; };
 		835501881B43345C00C8CC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		837AE8871B43597E008CBD5C /* InTheatersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheatersViewController.swift; sourceTree = "<group>"; };
 		E91BCDD88B524A45513D0A58 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,9 @@
 		835501631B43345C00C8CC48 /* swifttmdb */ = {
 			isa = PBXGroup;
 			children = (
+				837AE8861B435958008CBD5C /* Utils */,
+				837AE8851B435945008CBD5C /* ViewControllers */,
+				837AE8841B43592F008CBD5C /* Models */,
 				835501641B43345C00C8CC48 /* AppDelegate.swift */,
 				835501661B43345C00C8CC48 /* FirstViewController.swift */,
 				835501681B43345C00C8CC48 /* SecondViewController.swift */,
@@ -138,6 +143,28 @@
 				835501881B43345C00C8CC48 /* Info.plist */,
 			);
 			path = swifttmdbUITests;
+			sourceTree = "<group>";
+		};
+		837AE8841B43592F008CBD5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		837AE8851B435945008CBD5C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				837AE8871B43597E008CBD5C /* InTheatersViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		837AE8861B435958008CBD5C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		D81AA0C72D20FDAFA0A015DC /* Pods */ = {
@@ -333,6 +360,7 @@
 				835501691B43345C00C8CC48 /* SecondViewController.swift in Sources */,
 				835501651B43345C00C8CC48 /* AppDelegate.swift in Sources */,
 				835501671B43345C00C8CC48 /* FirstViewController.swift in Sources */,
+				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
