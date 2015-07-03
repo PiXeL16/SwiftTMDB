@@ -11,8 +11,7 @@ import Moya
 
 // MARK: - Provider setup
 
-let TMDBProvider = MoyaProvider<TMDB>()
-
+let TMDBProvider = MoyaProvider(endpointsClosure: endpointClosure)
 
 // MARK: - Provider support
 
@@ -43,9 +42,9 @@ extension TMDB :MoyaTarget{
     public var parameters: [String: AnyObject] {
         switch self {
         case .MoviesInTheaters(let page):
-            return ["api_key": Constants.apiKey,"page":"\(page)"]
+            return ["page":"\(page)"]
         case .PopularMovies(let page):
-            return ["api_key": Constants.apiKey,"page":"\(page)"]
+            return ["page":"\(page)"]
         default:
             return [:]
         }
@@ -63,6 +62,13 @@ extension TMDB :MoyaTarget{
     }
 }
 
+let endpointClosure = { (target: TMDB) -> Endpoint<TMDB> in
+    
+    let endpoint: Endpoint<TMDB> = Endpoint<TMDB>(URL: url(target), sampleResponse: .Success(200, {target.sampleData}), method: target.method, parameters: target.parameters)
+    
+   return endpoint.endpointByAddingParameters(["api_key": Constants.apiKey])
+    
+}
 
 
 // MARK: - Provider support , to used form sample data. .json files need to be defined in a local folder
