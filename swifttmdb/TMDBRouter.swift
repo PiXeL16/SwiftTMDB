@@ -8,14 +8,16 @@
 
 import UIKit
 import Alamofire
-
+/**
+*  Base Router, NOT USED, Istead using Moya
+*/
 struct TMDBRouter {
     
     enum Router:URLRequestConvertible{
         
-        static let baseURL = Contants.serverBaseURL
+        static let baseURL = Constants.serverBaseURL
         
-        static let apiKey = Contants.apiKey
+        static let apiKey = Constants.apiKey
         
         case MoviesInTheaters(Int)
         case PopularMovies(Int)

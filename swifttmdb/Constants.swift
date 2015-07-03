@@ -8,7 +8,7 @@
 
 import UIKit
 /// Global app constants
-struct Contants {
+struct Constants {
     ///Main server base url
     static let serverBaseURL = "http://api.themoviedb.org/3"
     ///API KEY for the API, shhhhhh this is a secret

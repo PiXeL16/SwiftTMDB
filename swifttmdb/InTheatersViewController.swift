@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InTheatersViewController: UIViewController,UICollectionViewDelegate {
+class InTheatersViewController: UIViewController {
     
     let reuseIdentifier = "MoviePosterCell"
     var movies = [Movie]()
@@ -60,7 +60,7 @@ extension InTheatersViewController:UICollectionViewDataSource{
         
         let movie = self.movies[indexPath.row]
         
-        cell.showPoster(posterPathURL: movie.posterImagePath!)
+        cell.showPoster(posterPathURL: movie.posterImagePath)
         
         // Configure the cell
         

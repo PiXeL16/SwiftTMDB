@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C2859C8091E225A27427F7E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070B57F7688AB105ADB5C886 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		833204B21B44E4B000B79281 /* AlamoFireSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */; };
+		833204B41B44ED0E00B79281 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B31B44ED0E00B79281 /* StringExtensions.swift */; };
+		833204B61B45045C00B79281 /* TMDBApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B51B45045C00B79281 /* TMDBApi.swift */; };
 		835501651B43345C00C8CC48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835501641B43345C00C8CC48 /* AppDelegate.swift */; };
 		8355016C1B43345C00C8CC48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8355016A1B43345C00C8CC48 /* Main.storyboard */; };
 		8355016E1B43345C00C8CC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8355016D1B43345C00C8CC48 /* Assets.xcassets */; };
@@ -19,6 +22,7 @@
 		836E4CB51B44B5C600A8314A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB41B44B5C600A8314A /* Constants.swift */; };
 		837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8871B43597E008CBD5C /* InTheatersViewController.swift */; };
 		837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8891B4363A5008CBD5C /* PopularViewController.swift */; };
+		837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837DB7D41B450D7500A537F5 /* JSONAble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,9 @@
 /* Begin PBXFileReference section */
 		006FFBC028B0A4FBC13FC347 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		070B57F7688AB105ADB5C886 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoFireSwiftyJSON.swift; sourceTree = "<group>"; };
+		833204B31B44ED0E00B79281 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		833204B51B45045C00B79281 /* TMDBApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBApi.swift; sourceTree = "<group>"; };
 		835501611B43345C00C8CC48 /* swifttmdb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifttmdb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835501641B43345C00C8CC48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8355016B1B43345C00C8CC48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 		836E4CB41B44B5C600A8314A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		837AE8871B43597E008CBD5C /* InTheatersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheatersViewController.swift; sourceTree = "<group>"; };
 		837AE8891B4363A5008CBD5C /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
+		837DB7D41B450D7500A537F5 /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
 		E91BCDD88B524A45513D0A58 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */,
+				833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */,
+				833204B51B45045C00B79281 /* TMDBApi.swift */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				836E4CA51B44904C00A8314A /* Movie.swift */,
+				837DB7D41B450D7500A537F5 /* JSONAble.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 		837AE8861B435958008CBD5C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -384,9 +396,13 @@
 			files = (
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
+				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,
 				836E4CAF1B449C4200A8314A /* MoviePosterCollectionViewCell.swift in Sources */,
 				836E4CA61B44904C00A8314A /* Movie.swift in Sources */,
+				833204B21B44E4B000B79281 /* AlamoFireSwiftyJSON.swift in Sources */,
+				833204B41B44ED0E00B79281 /* StringExtensions.swift in Sources */,
 				835501651B43345C00C8CC48 /* AppDelegate.swift in Sources */,
+				833204B61B45045C00B79281 /* TMDBApi.swift in Sources */,
 				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
 				836E4CB51B44B5C600A8314A /* Constants.swift in Sources */,
 			);
