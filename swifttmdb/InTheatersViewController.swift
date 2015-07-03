@@ -25,9 +25,6 @@ class InTheatersViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
 
     /*
     // MARK: - Navigation
@@ -67,34 +64,18 @@ extension InTheatersViewController:UICollectionViewDataSource{
         return cell
     }
     
-//    func collectionView(collectionView: UICollectionView,
-//        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-//    {
-//        let gifViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(gifViewCellIdentifier, forIndexPath: indexPath) as GifViewCell
-//        let gifObject = images[Int(indexPath.row)]
-//        gifViewCell.maskForGif(gifObject);
-//        
-//        if indexPath.row == self.fetchedImages - 5 {
-//            self.fetchedImages = self.images.count + 25
-//            // Fetch new images
-//            GiphyAPIClient.sharedInstance.gifsForQuery(queryString,offset: self.images.count, callback: { (imageArray, error) -> () in
-//                // Update collection view with new data
-//                self.collectionView.performBatchUpdates({ () -> Void in
-//                    let dataCount = self.images.count
-//                    self.images += imageArray
-//                    
-//                    var indexPaths = [NSIndexPath]()
-//                    for var i=dataCount; i<dataCount+imageArray.count; i++ {
-//                        indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
-//                    }
-//                    
-//                    self.collectionView.insertItemsAtIndexPaths(indexPaths)
-//                    
-//                    }, completion: nil)
-//            })
-//        }
-//        return gifViewCell;
-//    }
+}
 
-    
+
+// MARK: - UICollectionViewDelegate
+extension InTheatersViewController : UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        // Select
+//        let cell = collectionView.cellForItemAtIndexPath(indexPath) as GifViewCell
+//        
+//        self.selectedImageView = cell.imageView
+//        self.selectedGif = images[Int(indexPath.row)]
+//        
+//        self.performSegueWithIdentifier("showDetail", sender: nil)
+    }
 }
