@@ -64,6 +64,17 @@ extension TMDB :MoyaTarget{
     }
 }
 
+extension TMDB{
+    
+    public static func createImageURL(image imageFile: String, imageWidth width: Int)->NSURL!{
+        
+        var baseImageURL = "http://image.tmdb.org/t/p/w\(width)/\(imageFile)"
+        
+        return NSURL(string: baseImageURL)
+        
+    }
+}
+
 let endpointClosure = { (target: TMDB) -> Endpoint<TMDB> in
     
     let endpoint: Endpoint<TMDB> = Endpoint<TMDB>(URL: url(target), sampleResponse: .Success(200, {target.sampleData}), method: target.method, parameters: target.parameters)

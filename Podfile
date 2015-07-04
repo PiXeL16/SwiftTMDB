@@ -6,6 +6,6 @@ use_frameworks!
 pod 'Alamofire', '~> 1.2'
 pod 'SwiftyJSON', '~> 2.2.0'
 pod 'Moya'
-
+pod 'XCGLogger', '~> 2.1'
 #Objective
-pod 'FastImageCache', '~> 1.3', :inhibit_warnings => true
+pod 'SDWebImage', '~> 3.7'

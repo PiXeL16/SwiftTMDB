@@ -17,6 +17,8 @@ class InTheatersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadMoviesInTheaters();
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +26,41 @@ class InTheatersViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func loadMoviesInTheaters(){
+        
+        TMDBProvider.request(.MoviesInTheaters(1), completion: { (data, statusCode, response, error) -> () in
+            
+            var success = error == nil
+            if let data = data {
+                let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil)
+                if let json = json as? NSDictionary {
+                    
+                    self.movies = Movie.fromData(json) as! [Movie]
+                    
+                    self.collectionView.reloadData()
+                    
+                    
+                    
+                } else {
+                    success = false
+                }
+                
+            }
+            else
+            {
+                success = false
+            }
+            
+            
+            if !success{
+                
+            }
+            
+        })
+        
     }
 
     /*

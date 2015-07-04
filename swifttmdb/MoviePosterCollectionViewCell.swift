@@ -13,8 +13,10 @@ class MoviePosterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    func showPoster(posterPathURL posterPath:String)
+    func showPoster(posterPathURL posterPath:NSURL?)
     {
+        
+        self.imageView.sd_setImageWithURL(posterPath)
         
     }
     
