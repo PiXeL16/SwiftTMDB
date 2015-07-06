@@ -10,18 +10,44 @@ import UIKit
 
 class InTheatersViewController: UIViewController {
     
-    let reuseIdentifier = "MoviePosterCell"
-    var movies = [Movie]()
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    let moviesViewModel = MoviesInTheatersViewModel()
+    let reuseIdentifier = "MoviePosterCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadMoviesInTheaters();
-
-        // Do any additional setup after loading the view.
+        
+        // Configure the view models
+        moviesViewModel.beginLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
+            //self.loadingActivityIndicator.startAnimating()
+        }
+        
+        moviesViewModel.endLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
+            //self.loadingActivityIndicator.stopAnimating()
+        }
+        
+        moviesViewModel.updateContentSignal.deliverOnMainThread().subscribeNext({ [unowned self] members in
+            self.collectionView.reloadData()
+            }, error: { [unowned self] error in
+                let alertController = UIAlertController(title: "Unable to fetch movies", message: error?.description, preferredStyle: .Alert)
+                
+                let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                    alertController.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                alertController.addAction(ok)
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                log.error("Unable to load movies in theaters")
+            })
+        
+        // Trigger first load
+        moviesViewModel.active = true
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,40 +55,6 @@ class InTheatersViewController: UIViewController {
     }
     
     
-    func loadMoviesInTheaters(){
-        
-        TMDBProvider.request(.MoviesInTheaters(1), completion: { (data, statusCode, response, error) -> () in
-            
-            var success = error == nil
-            if let data = data {
-                let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil)
-                if let json = json as? NSDictionary {
-                    
-                    self.movies = Movie.fromData(json) as! [Movie]
-                    
-                    self.collectionView.reloadData()
-                    
-                    
-                    
-                } else {
-                    success = false
-                }
-                
-            }
-            else
-            {
-                success = false
-            }
-            
-            
-            if !success{
-                
-            }
-            
-        })
-        
-    }
-
     /*
     // MARK: - Navigation
 
@@ -78,21 +70,23 @@ class InTheatersViewController: UIViewController {
 extension InTheatersViewController:UICollectionViewDataSource{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return moviesViewModel.numbersOfSections
     }
     
     
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int
     {
-        return self.movies.count
+        return moviesViewModel.numberOfItemsInSection(section)
     }
+    
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MoviePosterCollectionViewCell
         
-        let movie = self.movies[indexPath.row]
+        let movie = self.moviesViewModel.movieAtIndexPath(indexPath)
         
         cell.showPoster(posterPathURL: movie.posterImagePath)
         

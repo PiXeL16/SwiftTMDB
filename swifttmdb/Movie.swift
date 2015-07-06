@@ -32,13 +32,13 @@ class Movie:JSONAble {
     override class func fromJSON(source:[String:AnyObject]) -> JSONAble{
         
         
-        
         let json = JSON(source)
         
         let id = json["id"].intValue
         let title = json["title"].stringValue
         let overview = json["overview"].stringValue
         let releaseDate = json["release_date"].stringValue
+        
         let backdropImagePath =  TMDB.createImageURL(image: json["backdrop_path"].stringValue, imageWidth: 342)
         let posterImagePath =  TMDB.createImageURL(image: json["poster_path"].stringValue, imageWidth: 342)
 
@@ -46,29 +46,5 @@ class Movie:JSONAble {
         
     }
     
-    class func fromData(data:AnyObject?)->[JSONAble]
-    {
-        var movies = [JSONAble]()
-        
-        if let data = data as? NSDictionary {
-            let json = JSON(data)
-            if let jsonMovies = json["results"].array {
-                
-                for jsonMovie in jsonMovies {
-                    
-                   let movie =  self.fromJSON(jsonMovie.object as! [String: AnyObject])
-                    
-                    movies.append(movie)
-                    
-                }
-                
-            }else{
-                log.debug("Error in json results:\(json)")
-            }
-        }
-        return movies
-        
-        
-    }
-   
+    
 }
