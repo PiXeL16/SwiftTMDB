@@ -128,13 +128,14 @@
 		835501631B43345C00C8CC48 /* swifttmdb */ = {
 			isa = PBXGroup;
 			children = (
+				83CC13A81B4B2B5E00D67174 /* UI */,
+				83CC13A71B4B2B0200D67174 /* Views */,
 				836E4CB11B44AFC300A8314A /* Api */,
-				836E4CA91B449B9A00A8314A /* Cells */,
+				836E4CA91B449B9A00A8314A /* Views */,
 				837AE8861B435958008CBD5C /* Utils */,
 				837AE8851B435945008CBD5C /* ViewControllers */,
 				837AE8841B43592F008CBD5C /* Models */,
 				835501641B43345C00C8CC48 /* AppDelegate.swift */,
-				8355016A1B43345C00C8CC48 /* Main.storyboard */,
 				8355016D1B43345C00C8CC48 /* Assets.xcassets */,
 				835501721B43345C00C8CC48 /* Info.plist */,
 				836E4CB41B44B5C600A8314A /* Constants.swift */,
@@ -160,12 +161,12 @@
 			path = swifttmdbUITests;
 			sourceTree = "<group>";
 		};
-		836E4CA91B449B9A00A8314A /* Cells */ = {
+		836E4CA91B449B9A00A8314A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */,
 			);
-			name = Cells;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		836E4CB11B44AFC300A8314A /* Api */ = {
@@ -202,6 +203,21 @@
 				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		83CC13A71B4B2B0200D67174 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		83CC13A81B4B2B5E00D67174 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8355016A1B43345C00C8CC48 /* Main.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		D81AA0C72D20FDAFA0A015DC /* Pods */ = {
