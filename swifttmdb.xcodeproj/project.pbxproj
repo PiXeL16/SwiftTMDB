@@ -112,7 +112,6 @@
 			children = (
 				83CC13A91B4B2C6D00D67174 /* ViewModel */,
 				83CC13A81B4B2B5E00D67174 /* UI */,
-				83CC13A71B4B2B0200D67174 /* Views */,
 				836E4CB11B44AFC300A8314A /* Api */,
 				836E4CA91B449B9A00A8314A /* Views */,
 				837AE8861B435958008CBD5C /* Utils */,
@@ -177,13 +176,6 @@
 				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		83CC13A71B4B2B0200D67174 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		83CC13A81B4B2B5E00D67174 /* UI */ = {

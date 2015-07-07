@@ -45,8 +45,9 @@ class InTheatersViewController: UIViewController {
                 log.error("Unable to load movies in theaters")
             })
         
-        // Trigger first load
-        moviesViewModel.active = true
+         // Trigger first load
+         moviesViewModel.active = true
+       
     }
 
 
