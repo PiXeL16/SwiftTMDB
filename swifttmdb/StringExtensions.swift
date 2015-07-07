@@ -17,6 +17,12 @@ extension String {
     }
     
     
+    static func fromUTF8Data(data: NSData) -> String? {
+        let nsString = NSString(data: data, encoding: NSUTF8StringEncoding)
+        return (nsString != nil) ? String(nsString!) : nil
+    }
+    
+    
     public func toUInt() -> UInt? {
         let i = toInt()
         if let i = i {

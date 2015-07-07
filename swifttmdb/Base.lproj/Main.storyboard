@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Helvetica.ttc">
@@ -21,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-SK-Oso">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-jy-zjU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEz-lJ-DKm">
@@ -60,16 +64,18 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="BXF-Z0-u8u"/>
-                            <constraint firstAttribute="bottom" secondItem="PXz-jy-zjU" secondAttribute="bottom" id="Mbc-dZ-9ab"/>
-                            <constraint firstItem="PXz-jy-zjU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Ywg-r0-pNV"/>
-                            <constraint firstAttribute="trailing" secondItem="PXz-jy-zjU" secondAttribute="trailing" id="x9y-KL-CTy"/>
+                            <constraint firstItem="PXz-jy-zjU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="DbN-0j-k7g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PXz-jy-zjU" secondAttribute="trailing" constant="-16" id="g5T-wI-wWO"/>
+                            <constraint firstAttribute="centerY" secondItem="Zpz-SK-Oso" secondAttribute="centerY" id="gV7-lR-RXE"/>
+                            <constraint firstItem="PXz-jy-zjU" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="rP5-dg-Pql"/>
+                            <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="wrH-47-ZJM"/>
+                            <constraint firstAttribute="centerX" secondItem="Zpz-SK-Oso" secondAttribute="centerX" id="xdI-O9-Kfb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Theaters" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Zpz-SK-Oso" id="rKO-uE-SuK"/>
                         <outlet property="collectionView" destination="PXz-jy-zjU" id="w7e-PH-83s"/>
                     </connections>
                 </viewController>

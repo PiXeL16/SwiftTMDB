@@ -12,6 +12,7 @@ class InTheatersViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let moviesViewModel = MoviesInTheatersViewModel()
     let reuseIdentifier = "MoviePosterCell"
@@ -22,11 +23,11 @@ class InTheatersViewController: UIViewController {
         
         // Configure the view models
         moviesViewModel.beginLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
-            //self.loadingActivityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
         }
         
         moviesViewModel.endLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
-            //self.loadingActivityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
         }
         
         moviesViewModel.updateContentSignal.deliverOnMainThread().subscribeNext({ [unowned self] members in
@@ -52,6 +53,11 @@ class InTheatersViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     
