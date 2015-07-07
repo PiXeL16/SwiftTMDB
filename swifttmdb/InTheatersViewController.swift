@@ -20,14 +20,19 @@ class InTheatersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+               
         
         // Configure the view models
         moviesViewModel.beginLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
-            self.activityIndicator.startAnimating()
+            
+            self.showProgressIndicator()
+            
         }
         
         moviesViewModel.endLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
-            self.activityIndicator.stopAnimating()
+            
+
+           self.hideProgressIndicator()
         }
         
         moviesViewModel.updateContentSignal.deliverOnMainThread().subscribeNext({ [unowned self] members in
@@ -59,6 +64,11 @@ class InTheatersViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    //Hide status bar
+    override func prefersStatusBarHidden() -> Bool {
+        return true;
     }
     
     
@@ -103,6 +113,8 @@ extension InTheatersViewController:UICollectionViewDataSource{
     }
     
 }
+
+
 
 
 // MARK: - UICollectionViewDelegate

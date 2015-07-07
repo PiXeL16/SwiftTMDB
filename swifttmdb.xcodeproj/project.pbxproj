@@ -15,6 +15,10 @@
 		8355016C1B43345C00C8CC48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8355016A1B43345C00C8CC48 /* Main.storyboard */; };
 		8355016E1B43345C00C8CC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8355016D1B43345C00C8CC48 /* Assets.xcassets */; };
 		8355017C1B43345C00C8CC48 /* swifttmdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355017B1B43345C00C8CC48 /* swifttmdbTests.swift */; };
+		83634BE51B4C6CCF009799A7 /* UIColor_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BE41B4C6CCF009799A7 /* UIColor_App.swift */; };
+		83634BEC1B4C73E8009799A7 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEB1B4C73E8009799A7 /* SwiftColors.swift */; };
+		83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */; };
+		83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */; };
 		836E4CA61B44904C00A8314A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CA51B44904C00A8314A /* Movie.swift */; };
 		836E4CAF1B449C4200A8314A /* MoviePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */; };
 		836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */; };
@@ -49,6 +53,11 @@
 		835501771B43345C00C8CC48 /* swifttmdbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swifttmdbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8355017B1B43345C00C8CC48 /* swifttmdbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifttmdbTests.swift; sourceTree = "<group>"; };
 		8355017D1B43345C00C8CC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83634BE41B4C6CCF009799A7 /* UIColor_App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_App.swift; sourceTree = "<group>"; };
+		83634BE91B4C7036009799A7 /* SwiftTMDB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftTMDB-Bridging-Header.h"; sourceTree = "<group>"; };
+		83634BEB1B4C73E8009799A7 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
+		83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTMDBTabBarController.swift; sourceTree = "<group>"; };
+		83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerProgressExtensions.swift; sourceTree = "<group>"; };
 		836E4CA51B44904C00A8314A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBRouter.swift; sourceTree = "<group>"; };
@@ -121,6 +130,7 @@
 				8355016D1B43345C00C8CC48 /* Assets.xcassets */,
 				835501721B43345C00C8CC48 /* Info.plist */,
 				836E4CB41B44B5C600A8314A /* Constants.swift */,
+				83634BE91B4C7036009799A7 /* SwiftTMDB-Bridging-Header.h */,
 			);
 			path = swifttmdb;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 			children = (
 				837AE8871B43597E008CBD5C /* InTheatersViewController.swift */,
 				837AE8891B4363A5008CBD5C /* PopularViewController.swift */,
+				83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
+				83634BEB1B4C73E8009799A7 /* SwiftColors.swift */,
+				83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 		83CC13A81B4B2B5E00D67174 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				83634BE41B4C6CCF009799A7 /* UIColor_App.swift */,
 				8355016A1B43345C00C8CC48 /* Main.storyboard */,
 			);
 			name = UI;
@@ -359,12 +373,16 @@
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,
 				836E4CAF1B449C4200A8314A /* MoviePosterCollectionViewCell.swift in Sources */,
+				83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */,
+				83634BE51B4C6CCF009799A7 /* UIColor_App.swift in Sources */,
 				836E4CA61B44904C00A8314A /* Movie.swift in Sources */,
+				83634BEC1B4C73E8009799A7 /* SwiftColors.swift in Sources */,
 				833204B21B44E4B000B79281 /* AlamoFireSwiftyJSON.swift in Sources */,
 				833204B41B44ED0E00B79281 /* StringExtensions.swift in Sources */,
 				835501651B43345C00C8CC48 /* AppDelegate.swift in Sources */,
 				833204B61B45045C00B79281 /* TMDBApi.swift in Sources */,
 				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
+				83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */,
 				836E4CB51B44B5C600A8314A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.swifttmdb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chris/Src/SwiftTMDB/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swifttmdb/SwiftTMDB-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -506,7 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.swifttmdb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chris/Src/SwiftTMDB/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swifttmdb/SwiftTMDB-Bridging-Header.h";
 			};
 			name = Release;
 		};

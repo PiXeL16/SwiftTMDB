@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .Severe: XCGLogger.XcodeColor(fg: (255, 255, 255), bg: (255, 0, 0)) // Optionally use RGB values directly
         ]
         
+        
         return true
     }
 

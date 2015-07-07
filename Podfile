@@ -12,5 +12,4 @@ pod 'SwiftyJSON', '~> 2.2.0'
 
 #UI
 pod 'SDWebImage', '~> 3.7'
-pod 'HexColors', '~> 2.2.1'
-
+pod 'MBProgressHUD', '~> 0.9.1'

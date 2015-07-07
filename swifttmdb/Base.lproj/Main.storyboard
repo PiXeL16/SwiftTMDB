@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-SK-Oso">
-                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                                <rect key="frame" x="281" y="255" width="37" height="37"/>
                             </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-jy-zjU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -67,7 +67,7 @@
                         <constraints>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="DbN-0j-k7g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PXz-jy-zjU" secondAttribute="trailing" constant="-16" id="g5T-wI-wWO"/>
-                            <constraint firstAttribute="centerY" secondItem="Zpz-SK-Oso" secondAttribute="centerY" id="gV7-lR-RXE"/>
+                            <constraint firstAttribute="centerY" secondItem="Zpz-SK-Oso" secondAttribute="centerY" constant="26.5" id="gV7-lR-RXE"/>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="rP5-dg-Pql"/>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="wrH-47-ZJM"/>
                             <constraint firstAttribute="centerX" secondItem="Zpz-SK-Oso" secondAttribute="centerX" id="xdI-O9-Kfb"/>
@@ -96,14 +96,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
+                                <rect key="frame" x="195" y="277" width="209.5" height="41.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
+                                <rect key="frame" x="192" y="327" width="215.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" constant="2.25" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Popular" image="second" id="cPa-gy-q4n"/>
@@ -123,17 +123,16 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--SwiftTMDB Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="SwiftTMDBTabBarController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -149,5 +148,5 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <color key="tintColor" red="1" green="0.5754749468" blue="0.076872545910000006" alpha="1" colorSpace="calibratedRGB"/>
 </document>

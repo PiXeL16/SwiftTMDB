@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (1.2.3)
-  - HexColors (2.2.1)
+  - MBProgressHUD (0.9.1)
   - Moya (1.1.1):
     - Moya/Core (= 1.1.1)
   - Moya/Core (1.1.1):
@@ -23,7 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.2)
-  - HexColors (~> 2.2.1)
+  - MBProgressHUD (~> 0.9.1)
   - Moya (~> 1.1.1)
   - ReachabilitySwift (~> 1.1)
   - ReactiveViewModel
@@ -33,7 +33,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
-  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Moya: ee0c8da3abb87f2a46bce384bd42ca13260e690e
   ReachabilitySwift: 1e53abddb01111deac0d229dabdb8bb043567b18
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
