@@ -8,11 +8,29 @@
 
 import UIKit
 
-class InTheatersViewController: UIViewController {
+class InTheatersViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private struct Constants{
+        static let numberOfLinesiPhonePortrait = 2
+        static let numberOfItemsiPhonePortrait = 2
+        static let numberOfLinesiPhoneLandscape = 2
+        static let numberOfItemsiPhoneLandscape = 5
+        static let desirediPadCellWidth = 160
+        static let desirediPadCellHeight = 205
+    }
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!{
+        didSet{
+            collectionView.alwaysBounceVertical = true
+            collectionView.dataSource = self
+            collectionView.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
+    
     
     let moviesViewModel = MoviesInTheatersViewModel()
     let reuseIdentifier = "MoviePosterCell"
@@ -20,7 +38,6 @@ class InTheatersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-               
         
         // Configure the view models
         moviesViewModel.beginLoadingSignal.deliverOnMainThread().subscribeNext { [unowned self] _ in
@@ -50,8 +67,10 @@ class InTheatersViewController: UIViewController {
                 log.error("Unable to load movies in theaters")
             })
         
-         // Trigger first load
-         moviesViewModel.active = true
+        self.setupCollectionView()
+        
+        // Trigger first load
+        moviesViewModel.active = true
        
     }
 
@@ -63,7 +82,7 @@ class InTheatersViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView.collectionViewLayout.invalidateLayout()
+    
     }
     
     //Hide status bar
@@ -71,20 +90,23 @@ class InTheatersViewController: UIViewController {
         return true;
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupCollectionView(){
+        
+        self.collectionView!.registerNib(UINib(nibName: "MoviePosterCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        
+        self.collectionView?.collectionViewLayout.invalidateLayout()
+        
     }
-    */
-}
-
-// MARK: UICollectionViewDataSource
-extension InTheatersViewController:UICollectionViewDataSource{
+    
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        collectionViewLayout?.invalidateLayout()
+    }
+    
+    
+    //MARK:UICollectionViewDataSource
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return moviesViewModel.numbersOfSections
@@ -98,34 +120,93 @@ extension InTheatersViewController:UICollectionViewDataSource{
     }
     
     
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MoviePosterCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MoviePosterCell
         
         let movie = self.moviesViewModel.movieAtIndexPath(indexPath)
         
-        cell.showPoster(posterPathURL: movie.posterImagePath)
-        
         // Configure the cell
+        
+        cell.showMovie(movie)
         
         return cell
     }
     
-}
-
-
-
-
-// MARK: - UICollectionViewDelegate
-extension InTheatersViewController : UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        // Select
-//        let cell = collectionView.cellForItemAtIndexPath(indexPath) as GifViewCell
-//        
-//        self.selectedImageView = cell.imageView
-//        self.selectedGif = images[Int(indexPath.row)]
-//        
-//        self.performSegueWithIdentifier("showDetail", sender: nil)
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == self.moviesViewModel.movies.count - 1 {
+            loadMore()
+        }
     }
+    
+    func loadMore(){
+        
+        self.moviesViewModel.loadMore()
+    }
+   
+    
+    // MARK: UICollectionViewDelegate
+    
+    
+    // MARK: UICollectionViewDelegateFlowLayout & UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let visibleAreaHeight = collectionView.bounds.height - UIApplication.sharedApplication().statusBarFrame.height - self.tabBarController!.tabBar.bounds.height
+        let visibleAreaWidth = collectionView.bounds.width
+        
+        //Set cell size based on size class.
+        let sizeClass = (horizontal: self.view.traitCollection.horizontalSizeClass, vertical: self.view.traitCollection.verticalSizeClass)
+        
+        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout{
+            switch sizeClass{
+            case (.Compact,.Regular):
+                //iPhone portrait
+                let cellWidth = ((visibleAreaWidth - CGFloat(Constants.numberOfItemsiPhonePortrait - 1)*flowLayout.minimumInteritemSpacing - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom)/CGFloat(Constants.numberOfItemsiPhonePortrait))
+                let cellHeight = ((visibleAreaHeight - CGFloat(Constants.numberOfLinesiPhonePortrait - 1)*flowLayout.minimumLineSpacing - flowLayout.sectionInset.left - flowLayout.sectionInset.right)/CGFloat(Constants.numberOfLinesiPhonePortrait))
+                return CGSizeMake(cellWidth, cellHeight)
+            case (_,.Compact):
+                //iPhone landscape
+                let cellWidth = ((collectionView.bounds.width - CGFloat(Constants.numberOfItemsiPhoneLandscape - 1)*flowLayout.minimumInteritemSpacing - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom)/CGFloat(Constants.numberOfItemsiPhoneLandscape))
+                let cellHeight = ((collectionView.bounds.height - CGFloat(Constants.numberOfLinesiPhoneLandscape - 1)*flowLayout.minimumLineSpacing - flowLayout.sectionInset.left - flowLayout.sectionInset.right)/CGFloat(Constants.numberOfLinesiPhoneLandscape))
+                return CGSizeMake(cellWidth, cellHeight)
+            case (_,_):
+                // iPad. Calculate cell size based on desired size
+                let numberOfLines = Int(visibleAreaHeight) / Constants.desirediPadCellHeight
+                let betweenLinesSpaceSum = CGFloat(numberOfLines - 1) * flowLayout.minimumLineSpacing
+                let sectionInsetsVerticalSum = flowLayout.sectionInset.top + flowLayout.sectionInset.bottom
+                
+                let adjustedHeight = (visibleAreaHeight - betweenLinesSpaceSum  - sectionInsetsVerticalSum)/CGFloat(numberOfLines)
+                let adjustedWidth = adjustedHeight * CGFloat(Constants.desirediPadCellWidth) / CGFloat(Constants.desirediPadCellHeight)
+                
+                return CGSizeMake(adjustedWidth, adjustedHeight)
+            default: return CGSizeMake(50, 50)
+            }
+        }
+        
+        return CGSizeMake(50, 50)
+    }
+
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //        // Select
+        //        let cell = collectionView.cellForItemAtIndexPath(indexPath) as GifViewCell
+        //
+        //        self.selectedImageView = cell.imageView
+        //        self.selectedGif = images[Int(indexPath.row)]
+        //
+        //        self.performSegueWithIdentifier("showDetail", sender: nil)
+    }
+
+    
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 }
+

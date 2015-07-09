@@ -17,6 +17,7 @@ class MoviesInTheatersViewModel: RVMViewModel {
     let endLoadingSignal :RACSignal = RACSubject()
     let updateContentSignal: RACSignal = RACSubject()
     let reachability = Reachability.reachabilityForInternetConnection()
+    var currentPage = 1
     
     var numbersOfSections:Int{
         get { return 1 }
@@ -67,7 +68,7 @@ class MoviesInTheatersViewModel: RVMViewModel {
     
     func loadData(){
         
-        TMDBProvider.request(.MoviesInTheaters(1), completion: { (data, statusCode, response, error) -> () in
+        TMDBProvider.request(.MoviesInTheaters(currentPage), completion: { (data, statusCode, response, error) -> () in
             
             // Notify caller that network request ended
             if let endSignal = self.endLoadingSignal as? RACSubject { endSignal.sendNext(nil) }
@@ -113,6 +114,18 @@ class MoviesInTheatersViewModel: RVMViewModel {
             }
             
         })
+    }
+    
+    
+    func loadMore()
+    {
+        
+        if let beginSignal = self.beginLoadingSignal as? RACSubject
+        { beginSignal.sendNext(nil) }
+        
+        self.currentPage++
+        self.loadData()
+        
     }
     
     

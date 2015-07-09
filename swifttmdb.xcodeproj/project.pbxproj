@@ -19,8 +19,10 @@
 		83634BEC1B4C73E8009799A7 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEB1B4C73E8009799A7 /* SwiftColors.swift */; };
 		83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */; };
 		83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */; };
+		83634BF51B4DEEB5009799A7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83634BF41B4DEEB5009799A7 /* Launch Screen.xib */; };
+		83634BF71B4DF14D009799A7 /* MoviePosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83634BF61B4DF14D009799A7 /* MoviePosterCell.xib */; };
 		836E4CA61B44904C00A8314A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CA51B44904C00A8314A /* Movie.swift */; };
-		836E4CAF1B449C4200A8314A /* MoviePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */; };
+		836E4CAF1B449C4200A8314A /* MoviePosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */; };
 		836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */; };
 		836E4CB51B44B5C600A8314A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB41B44B5C600A8314A /* Constants.swift */; };
 		837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8871B43597E008CBD5C /* InTheatersViewController.swift */; };
@@ -58,8 +60,10 @@
 		83634BEB1B4C73E8009799A7 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTMDBTabBarController.swift; sourceTree = "<group>"; };
 		83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerProgressExtensions.swift; sourceTree = "<group>"; };
+		83634BF41B4DEEB5009799A7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		83634BF61B4DF14D009799A7 /* MoviePosterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviePosterCell.xib; sourceTree = "<group>"; };
 		836E4CA51B44904C00A8314A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCell.swift; sourceTree = "<group>"; };
 		836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBRouter.swift; sourceTree = "<group>"; };
 		836E4CB41B44B5C600A8314A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		837AE8871B43597E008CBD5C /* InTheatersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheatersViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		835501631B43345C00C8CC48 /* swifttmdb */ = {
 			isa = PBXGroup;
 			children = (
+				83634BF31B4DEB43009799A7 /* Supporting Files */,
 				83CC13A91B4B2C6D00D67174 /* ViewModel */,
 				83CC13A81B4B2B5E00D67174 /* UI */,
 				836E4CB11B44AFC300A8314A /* Api */,
@@ -128,9 +133,7 @@
 				837AE8841B43592F008CBD5C /* Models */,
 				835501641B43345C00C8CC48 /* AppDelegate.swift */,
 				8355016D1B43345C00C8CC48 /* Assets.xcassets */,
-				835501721B43345C00C8CC48 /* Info.plist */,
 				836E4CB41B44B5C600A8314A /* Constants.swift */,
-				83634BE91B4C7036009799A7 /* SwiftTMDB-Bridging-Header.h */,
 			);
 			path = swifttmdb;
 			sourceTree = "<group>";
@@ -144,10 +147,20 @@
 			path = swifttmdbTests;
 			sourceTree = "<group>";
 		};
+		83634BF31B4DEB43009799A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				835501721B43345C00C8CC48 /* Info.plist */,
+				83634BE91B4C7036009799A7 /* SwiftTMDB-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		836E4CA91B449B9A00A8314A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				836E4CAE1B449C4200A8314A /* MoviePosterCollectionViewCell.swift */,
+				836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */,
+				83634BF61B4DF14D009799A7 /* MoviePosterCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 			children = (
 				83634BE41B4C6CCF009799A7 /* UIColor_App.swift */,
 				8355016A1B43345C00C8CC48 /* Main.storyboard */,
+				83634BF41B4DEEB5009799A7 /* Launch Screen.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -302,7 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8355016E1B43345C00C8CC48 /* Assets.xcassets in Resources */,
+				83634BF71B4DF14D009799A7 /* MoviePosterCell.xib in Resources */,
 				8355016C1B43345C00C8CC48 /* Main.storyboard in Resources */,
+				83634BF51B4DEEB5009799A7 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +388,7 @@
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,
-				836E4CAF1B449C4200A8314A /* MoviePosterCollectionViewCell.swift in Sources */,
+				836E4CAF1B449C4200A8314A /* MoviePosterCell.swift in Sources */,
 				83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */,
 				83634BE51B4C6CCF009799A7 /* UIColor_App.swift in Sources */,
 				836E4CA61B44904C00A8314A /* Movie.swift in Sources */,

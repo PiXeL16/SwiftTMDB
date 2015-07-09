@@ -22,9 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-SK-Oso">
-                                <rect key="frame" x="281" y="255" width="37" height="37"/>
-                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-jy-zjU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEz-lJ-DKm">
@@ -33,31 +30,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="Bqd-WZ-OTx" customClass="MoviePosterCollectionViewCell" customModule="swifttmdb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="171" height="256"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-xz-2En">
-                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="256"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="Ttz-xz-2En" firstAttribute="leading" secondItem="Bqd-WZ-OTx" secondAttribute="leading" id="29v-cB-xns"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ttz-xz-2En" secondAttribute="bottom" id="KQI-A4-FFw"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ttz-xz-2En" secondAttribute="trailing" id="XnO-IE-MSw"/>
-                                            <constraint firstItem="Ttz-xz-2En" firstAttribute="top" secondItem="Bqd-WZ-OTx" secondAttribute="top" id="mm6-hl-c8y"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageView" destination="Ttz-xz-2En" id="KMD-EW-l8a"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="KHd-Hi-jcQ"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="lY3-Th-pVR"/>
@@ -67,16 +40,14 @@
                         <constraints>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="DbN-0j-k7g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PXz-jy-zjU" secondAttribute="trailing" constant="-16" id="g5T-wI-wWO"/>
-                            <constraint firstAttribute="centerY" secondItem="Zpz-SK-Oso" secondAttribute="centerY" constant="26.5" id="gV7-lR-RXE"/>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="rP5-dg-Pql"/>
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="wrH-47-ZJM"/>
-                            <constraint firstAttribute="centerX" secondItem="Zpz-SK-Oso" secondAttribute="centerX" id="xdI-O9-Kfb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Theaters" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="Zpz-SK-Oso" id="rKO-uE-SuK"/>
                         <outlet property="collectionView" destination="PXz-jy-zjU" id="w7e-PH-83s"/>
+                        <outlet property="collectionViewLayout" destination="HEz-lJ-DKm" id="ANN-0N-xdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
