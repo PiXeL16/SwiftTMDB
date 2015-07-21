@@ -18,9 +18,10 @@
 		83634BE51B4C6CCF009799A7 /* UIColor_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BE41B4C6CCF009799A7 /* UIColor_App.swift */; };
 		83634BEC1B4C73E8009799A7 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEB1B4C73E8009799A7 /* SwiftColors.swift */; };
 		83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */; };
-		83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */; };
+		83634BF21B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BF11B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift */; };
 		83634BF51B4DEEB5009799A7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83634BF41B4DEEB5009799A7 /* Launch Screen.xib */; };
 		83634BF71B4DF14D009799A7 /* MoviePosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83634BF61B4DF14D009799A7 /* MoviePosterCell.xib */; };
+		83634BF91B507638009799A7 /* BaseMovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634BF81B507638009799A7 /* BaseMovieCollectionViewController.swift */; };
 		836E4CA61B44904C00A8314A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CA51B44904C00A8314A /* Movie.swift */; };
 		836E4CAF1B449C4200A8314A /* MoviePosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */; };
 		836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */; };
@@ -59,9 +60,10 @@
 		83634BE91B4C7036009799A7 /* SwiftTMDB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftTMDB-Bridging-Header.h"; sourceTree = "<group>"; };
 		83634BEB1B4C73E8009799A7 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTMDBTabBarController.swift; sourceTree = "<group>"; };
-		83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerProgressExtensions.swift; sourceTree = "<group>"; };
+		83634BF11B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerActivityIndicatorExtension.swift; sourceTree = "<group>"; };
 		83634BF41B4DEEB5009799A7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		83634BF61B4DF14D009799A7 /* MoviePosterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviePosterCell.xib; sourceTree = "<group>"; };
+		83634BF81B507638009799A7 /* BaseMovieCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMovieCollectionViewController.swift; sourceTree = "<group>"; };
 		836E4CA51B44904C00A8314A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCell.swift; sourceTree = "<group>"; };
 		836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBRouter.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				837AE8871B43597E008CBD5C /* InTheatersViewController.swift */,
 				837AE8891B4363A5008CBD5C /* PopularViewController.swift */,
 				83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */,
+				83634BF81B507638009799A7 /* BaseMovieCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 			children = (
 				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
 				83634BEB1B4C73E8009799A7 /* SwiftColors.swift */,
-				83634BF11B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift */,
+				83634BF11B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -386,10 +389,11 @@
 			files = (
 				83CC13AB1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift in Sources */,
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
+				83634BF91B507638009799A7 /* BaseMovieCollectionViewController.swift in Sources */,
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,
 				836E4CAF1B449C4200A8314A /* MoviePosterCell.swift in Sources */,
-				83634BF21B4C7B21009799A7 /* UIViewControllerProgressExtensions.swift in Sources */,
+				83634BF21B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift in Sources */,
 				83634BE51B4C6CCF009799A7 /* UIColor_App.swift in Sources */,
 				836E4CA61B44904C00A8314A /* Movie.swift in Sources */,
 				83634BEC1B4C73E8009799A7 /* SwiftColors.swift in Sources */,
@@ -522,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = swifttmdb/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.swifttmdb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,7 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = swifttmdb/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.swifttmdb;
 				PRODUCT_NAME = "$(TARGET_NAME)";

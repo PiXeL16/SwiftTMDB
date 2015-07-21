@@ -6,17 +6,26 @@
 //  Copyright (c) 2015 greenpixels. All rights reserved.
 //
 
-import ReactiveViewModel
 import ReactiveCocoa
 import ReachabilitySwift
+import RxViewModel
 
-class MoviesInTheatersViewModel: RVMViewModel {
+import RxSwift
+import RxCocoa
+
+class MoviesInTheatersViewModel: RxViewModel {
     
     var movies = [Movie]()
-    let beginLoadingSignal :RACSignal = RACSubject()
-    let endLoadingSignal :RACSignal = RACSubject()
-    let updateContentSignal: RACSignal = RACSubject()
+    
+    
+    let beginLoadingSignal = PublishSubject<AnyObject?>()
+    
+    let endLoadingSignal = PublishSubject<AnyObject?>()
+    
+    let updateContentSignal =  PublishSubject<[Movie]?>()
+    
     let reachability = Reachability.reachabilityForInternetConnection()
+    
     var currentPage = 1
     
     var numbersOfSections:Int{
@@ -44,51 +53,59 @@ class MoviesInTheatersViewModel: RVMViewModel {
         
         reachability.startNotifier()
         
-        self.didBecomeActiveSignal.subscribeNext { [unowned self] active in
-            self.active = false
-            // Notify caller that network request is about to begin
-            if let beginSignal = self.beginLoadingSignal as? RACSubject { beginSignal.sendNext(nil) }
-            
-            // Check if we have connectivity
-            if self.reachability.isReachable(){
-                self.loadData()
-            }
-            else
-            {
-                if let updateSignal = self.updateContentSignal as? RACSubject {
-                    
-                    updateSignal.sendError(NSError(domain: "No internet connection", code: 500, userInfo: nil))
-                }
-                //TODO: Present reachbility error
-            }
-        }
         
+        
+        self.didBecomeActive >- subscribeNext { [weak self] _ in
+            
+            if let strongSelf = self{
+                
+                strongSelf.active = false
+                
+                strongSelf.loadData()
+                
+                sendNext(strongSelf.beginLoadingSignal, nil)
+                
+            }
+            
+        }
+        // Check if we have connectivity
+        //if self.reachability.isReachable(){
+        
+        //            }
+        //            else
+        //            {
+        //                if let updateSignal = self.updateContentSignal as? RACSubject {
+        //
+        //                    updateSignal.sendError(NSError(domain: "No internet connection", code: 500, userInfo: nil))
+        //                }
+        //                //TODO: Present reachbility error
+        //            }
+        //}
     }
     
     
     func loadData(){
         
-        TMDBProvider.request(.MoviesInTheaters(currentPage), completion: { (data, statusCode, response, error) -> () in
+        TMDBProvider.request(.MoviesInTheaters(self.currentPage), completion: { (data, statusCode, response, error) -> () in
             
-            // Notify caller that network request ended
-            if let endSignal = self.endLoadingSignal as? RACSubject { endSignal.sendNext(nil) }
-            
+            sendNext(self.endLoadingSignal, nil)
             
             // Check error, and if so notify back and cancel processing
             // data.
             if let err = error where err.code != 0 {
-                if let updateSignal = self.updateContentSignal as? RACSubject {
-                    
-                    updateSignal.sendError(err)
-                }
+                
+                log.error("Error in the request \(err.description)")
+                
+                sendError(self.updateContentSignal, err)
                 
                 return
             }
-            //Parse
             
+            //Parse json data
             if let data = data {
                 var localError: NSError?
                 if let json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &localError){
+                    
                     if let movies = json["results"] as? Array<Dictionary<String, AnyObject>> {
                         
                         for jsonMovie in movies{
@@ -98,17 +115,23 @@ class MoviesInTheatersViewModel: RVMViewModel {
                             
                         }
                         
-                        // Report back the new data.
-                        if let updateSignal = self.updateContentSignal as? RACSubject {
-                            updateSignal.sendNext(self.movies)
-                        }
+                        //Report back new data
+                        sendNext(self.updateContentSignal, self.movies)
+                        
                     }
                     
                 } else {
-                    //If error getting result notify error
-                    if let updateSignal = self.updateContentSignal as? RACSubject {
-                        updateSignal.sendError(localError)
+
+                    log.error("Error parsing data")
+                    
+                    if let error = localError{
+                        
+                        log.error("\(error.description)")
+                        
+                        sendError(self.updateContentSignal, error)
+                        
                     }
+                    
                 }
                 
             }
@@ -120,8 +143,7 @@ class MoviesInTheatersViewModel: RVMViewModel {
     func loadMore()
     {
         
-        if let beginSignal = self.beginLoadingSignal as? RACSubject
-        { beginSignal.sendNext(nil) }
+        sendNext(self.beginLoadingSignal, nil)
         
         self.currentPage++
         self.loadData()

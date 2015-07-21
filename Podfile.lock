@@ -1,20 +1,16 @@
 PODS:
   - Alamofire (1.2.3)
-  - MBProgressHUD (0.9.1)
+  - DTIActivityIndicator (0.1.0)
   - Moya (1.1.1):
     - Moya/Core (= 1.1.1)
   - Moya/Core (1.1.1):
     - Alamofire (~> 1.2.0)
   - ReachabilitySwift (1.1)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
-  - ReactiveViewModel (0.3):
-    - ReactiveCocoa (~> 2.4)
+  - RxCocoa (1.8):
+    - RxSwift
+  - RxSwift (1.8)
+  - RxViewModel (0.2.1):
+    - RxCocoa (~> 1.8)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -23,21 +19,31 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.2)
-  - MBProgressHUD (~> 0.9.1)
+  - DTIActivityIndicator (from `https://github.com/esttorhe/DTIActivityIndicatorView-Swift`)
   - Moya (~> 1.1.1)
   - ReachabilitySwift (~> 1.1)
-  - ReactiveViewModel
+  - RxViewModel (~> 0.2.1)
   - SDWebImage (~> 3.7)
   - SwiftyJSON (~> 2.2.0)
   - XCGLogger (~> 2.1)
 
+EXTERNAL SOURCES:
+  DTIActivityIndicator:
+    :git: https://github.com/esttorhe/DTIActivityIndicatorView-Swift
+
+CHECKOUT OPTIONS:
+  DTIActivityIndicator:
+    :commit: 714fccd5878a65375fdd08570c9d26008cf0ecd9
+    :git: https://github.com/esttorhe/DTIActivityIndicatorView-Swift
+
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  DTIActivityIndicator: ace0cc993398c52fecf8babc1aa7415ec1b0fb08
   Moya: ee0c8da3abb87f2a46bce384bd42ca13260e690e
   ReachabilitySwift: 1e53abddb01111deac0d229dabdb8bb043567b18
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  RxCocoa: 596208e539333929faed6b4c98f8acb9e3dc042c
+  RxSwift: 779bad8fccc06b5c22080af13dfeaeab2ee378c5
+  RxViewModel: 2ec4271032adac02ef52de989f56e7e8c4c99ca3
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
   XCGLogger: 8df921bcf88abbd511b887c8febde8163d624d81
