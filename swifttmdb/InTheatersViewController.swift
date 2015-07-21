@@ -32,23 +32,28 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
             
         }
         
-        self.moviesViewModel.updateContentSignal >- observeOn(MainScheduler.sharedInstance) >- subscribeNext { [unowned self] movies in
-            
-            self.collectionView.reloadData()
-        }
-        
-        self.moviesViewModel.updateContentSignal >- observeOn(MainScheduler.sharedInstance) >- subscribeError { [unowned self] error in
-            
-            let alertController = UIAlertController(title: "Unable to fetch movies", message: error.localizedDescription, preferredStyle: .Alert)
-            
-            let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-                alertController.dismissViewControllerAnimated(true, completion: nil)
-            })
-            
-            alertController.addAction(ok)
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
+        self.moviesViewModel.updateContentSignal
+            >- observeOn(MainScheduler.sharedInstance)
+            >- subscribe ( next: { [unowned self] _ in
+                
+                    self.collectionView.reloadData()
+                
+                }, error: { error in
+                    
+                    let alertController = UIAlertController(title: "Unable to fetch movies", message: error.localizedDescription, preferredStyle: .Alert)
+                    
+                    let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                        alertController.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    
+                    alertController.addAction(ok)
+                    self.presentViewController(alertController, animated: true, completion: nil)
 
+                }, completed: {
+                    // do something on completed
+            })
+        
+        
         // Trigger first load
         moviesViewModel.active = true
        
@@ -71,10 +76,10 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
     
     
     
-//    //Hide status bar
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true;
-//    }
+    //Hide status bar
+    override func prefersStatusBarHidden() -> Bool {
+        return true;
+    }
     
     
     //MARK:UICollectionViewDataSource
