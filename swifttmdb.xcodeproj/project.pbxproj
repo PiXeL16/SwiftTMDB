@@ -30,6 +30,7 @@
 		837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8891B4363A5008CBD5C /* PopularViewController.swift */; };
 		837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837DB7D41B450D7500A537F5 /* JSONAble.swift */; };
 		83CC13AB1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC13AA1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift */; };
+		83D2500E1B62E13300F32D2B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2500D1B62E13300F32D2B /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		837AE8891B4363A5008CBD5C /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		837DB7D41B450D7500A537F5 /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
 		83CC13AA1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatersViewModel.swift; sourceTree = "<group>"; };
+		83D2500D1B62E13300F32D2B /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E91BCDD88B524A45513D0A58 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				833204B31B44ED0E00B79281 /* StringExtensions.swift */,
 				83634BEB1B4C73E8009799A7 /* SwiftColors.swift */,
 				83634BF11B4C7B21009799A7 /* UIViewControllerActivityIndicatorExtension.swift */,
+				83D2500D1B62E13300F32D2B /* DateExtension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				83CC13AB1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift in Sources */,
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
+				83D2500E1B62E13300F32D2B /* DateExtension.swift in Sources */,
 				83634BF91B507638009799A7 /* BaseMovieCollectionViewController.swift in Sources */,
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,

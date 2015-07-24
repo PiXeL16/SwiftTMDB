@@ -144,14 +144,20 @@ class MoviesInTheatersViewModel: RxViewModel {
         })
     }
     
-    
+    /**
+    Load more movies from API
+    For movies in theaters we are only interested in the first 2 pages
+    */
     func loadMore()
     {
+        if(currentPage <= 2)
+        {
+            sendNext(self.beginLoadingSignal, nil)
         
-        sendNext(self.beginLoadingSignal, nil)
-        
-        self.currentPage++
-        self.loadData()
+            self.currentPage++
+            self.loadData()
+            
+        }
         
     }
     

@@ -33,12 +33,12 @@ class Movie:JSONAble {
     */
     init(id: Int, title: String, overview: String, releaseDate: String?, backdropImagePath: NSURL?, posterImagePath: NSURL?){
         
-        self.id = id
-        self.title = title
-        self.overview = overview
-        self.releaseDate = releaseDate
+        self.id                = id
+        self.title             = title
+        self.overview          = overview
+        self.releaseDate       = releaseDate
         self.backdropImagePath = backdropImagePath
-        self.posterImagePath = posterImagePath
+        self.posterImagePath   = posterImagePath
     }
     
     /// Parse movie from Json Representation

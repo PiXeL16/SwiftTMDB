@@ -45,7 +45,14 @@ extension TMDB :MoyaTarget{
     public var parameters: [String: AnyObject] {
         switch self {
         case .MoviesInTheaters(let page):
-            return ["page":"\(page)"]
+        
+            let today:NSDate = NSDate()
+            
+            return ["page":"\(page)",
+                    "primary_release_date.gte":  today.dayAtTheStartOfMonth().simpleDateFormatString(),
+                    "primary_release_date.lte":  today.dayAtTheEndOfMonth().simpleDateFormatString(),
+                    "sort_by":"popularity.desc"]
+            
         case .PopularMovies(let page):
             return ["page":"\(page)"]
         default:
@@ -110,5 +117,6 @@ Returns the base URL with the route path of the target
 :returns: Complete url with host / target
 */
 public func url(route: MoyaTarget) -> String {
+    
     return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString!
 }
