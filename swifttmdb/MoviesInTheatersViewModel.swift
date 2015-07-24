@@ -12,14 +12,14 @@ import RxViewModel
 import RxSwift
 import RxCocoa
 
+/// View model for the MoviesInTheaters View Controller
 class MoviesInTheatersViewModel: RxViewModel {
     
     var movies = [Movie]()
     
-    
     let beginLoadingSignal = PublishSubject<AnyObject?>()
     
-    let endLoadingSignal = PublishSubject<AnyObject?>()
+            let endLoadingSignal = PublishSubject<AnyObject?>()
     
     let updateContentSignal =  PublishSubject<[Movie]?>()
     
@@ -45,7 +45,11 @@ class MoviesInTheatersViewModel: RxViewModel {
         return movie
     }
     
+    /**
+    Init ViewModel
     
+    :returns: self
+    */
     override init(){
         
         super.init()
@@ -82,7 +86,9 @@ class MoviesInTheatersViewModel: RxViewModel {
         //}
     }
     
-    
+    /**
+    Gets data from the server and parse it
+    */
     func loadData(){
         
         TMDBProvider.request(.MoviesInTheaters(self.currentPage), completion: { (data, statusCode, response, error) -> () in
