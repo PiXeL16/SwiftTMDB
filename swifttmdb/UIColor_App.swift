@@ -8,7 +8,7 @@
 
 
 import UIKit
-
+// MARK: - Some of my colors
 extension UIColor {
     
     static func tintColor() -> UIColor {

@@ -13,7 +13,7 @@ import Moya
 
 let TMDBProvider = MoyaProvider(endpointsClosure: endpointClosure)
 //
-//let TMDBProvider = MoyaProvider<MoyaTarget>()
+//let TMDBProvider = MoyaProvider<TMDB>()
 
 // MARK: - Provider support
 
@@ -23,9 +23,10 @@ public enum TMDB{
     case PopularMovies(Int)
     
 }
-
+// MARK: - Moya target for TMDB API  - WIP
 extension TMDB :MoyaTarget{
     
+    /// Base URL
     public var baseURL: NSURL { return NSURL(string: Constants.serverBaseURL)! }
     
     public var path: String {
@@ -65,7 +66,14 @@ extension TMDB :MoyaTarget{
 }
 
 extension TMDB{
+    /**
+    Creates the complete Image URL of the IMDB api
     
+    :param: imageFile Image File Path
+    :param: width     Image Width
+    
+    :returns: Returns the image full URL path
+    */
     public static func createImageURL(image imageFile: String, imageWidth width: Int)->NSURL!{
         
         var baseImageURL = "http://image.tmdb.org/t/p/w\(width)/\(imageFile)"
@@ -75,6 +83,7 @@ extension TMDB{
     }
 }
 
+/// Endpoint that pretty much adds an API key to each request, so its not needed to be added manually in the target ENUM
 let endpointClosure = { (target: TMDB) -> Endpoint<TMDB> in
     
     let endpoint: Endpoint<TMDB> = Endpoint<TMDB>(URL: url(target), sampleResponse: .Success(200, {target.sampleData}), method: target.method, parameters: target.parameters)
@@ -93,7 +102,13 @@ private func stubbedResponse(filename: String) -> NSData! {
     return NSData(contentsOfFile: path!)
 }
 
+/**
+Returns the base URL with the route path of the target
 
+:param: route Route of the target
+
+:returns: Complete url with host / target
+*/
 public func url(route: MoyaTarget) -> String {
     return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString!
 }

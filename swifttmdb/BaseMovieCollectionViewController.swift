@@ -8,18 +8,21 @@
 
 import UIKit
 
+/// Collection View controller for movies that wraps basic functioanlity
 class BaseMovieCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
+    /**
+    *  Constants for the collection view
+    */
     private struct Constants{
-        static let numberOfLinesiPhonePortrait = 2
-        static let numberOfItemsiPhonePortrait = 2
+        static let numberOfLinesiPhonePortrait  = 2
+        static let numberOfItemsiPhonePortrait  = 2
         static let numberOfLinesiPhoneLandscape = 2
         static let numberOfItemsiPhoneLandscape = 5
-        static let desirediPadCellWidth = 155
-        static let desirediPadCellHeight = 205
+        static let desirediPadCellWidth         = 155
+        static let desirediPadCellHeight        = 205
     }
     
-    
+
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
             collectionView.alwaysBounceVertical = true
@@ -34,19 +37,27 @@ class BaseMovieCollectionViewController: UIViewController,UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.setupCollectionView()
         
     }
     
+    /**
+    Setups the collection view
+    */
     func setupCollectionView(){
         
+        //Sets the cell
         self.collectionView!.registerNib(UINib(nibName: "MoviePosterCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         self.collectionView?.collectionViewLayout.invalidateLayout()
         
     }
+    /**
+    Invalidate collection view so its reload when devices is rotated
     
+    :param: size
+    :param: coordinator 
+    */
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         

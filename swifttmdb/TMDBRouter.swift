@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 /**
-*  Base Router, NOT USED, Istead using Moya
+*  Base Router, NOT USED, Instead using Moya
 */
 struct TMDBRouter {
     

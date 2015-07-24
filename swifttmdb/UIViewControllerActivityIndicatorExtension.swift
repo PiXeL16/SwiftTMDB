@@ -8,10 +8,12 @@
 
 import UIKit
 import DTIActivityIndicator
-
+// MARK: - Wraper of activity indicators
 extension UIViewController {
     
-    //Show a progress indicator in the view
+    /**
+    Shows the progress indicator in the view of the view controller
+    */
     func showActivityIndicator() {
         
         let myActivityIndicatorView: DTIActivityIndicatorView = DTIActivityIndicatorView(frame: CGRect(x:0.0, y:0.0, width:80.0, height:80.0))
@@ -26,7 +28,9 @@ extension UIViewController {
     }
     
     
-    //Hide the progress indicator in the view
+    /**
+    Hides the activity indicator previewsly shown
+    */
     func hideActivityIndicator() {
         
         //TODO: Fix this!!
@@ -38,12 +42,17 @@ extension UIViewController {
         }
     }
     
+    /**
+    Shows the network indicator on the status bar
+    */
     func showNetworkIndicator()
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
     }
-    
+    /**
+    Hides the network indicator on the status bar
+    */
     func hideNetworkIndicator()
     {
          UIApplication.sharedApplication().networkActivityIndicatorVisible = false

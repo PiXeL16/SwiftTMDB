@@ -10,7 +10,7 @@ import UIKit
 
 import RxSwift
 import RxCocoa
-
+/// Shows the movies that are in theaters
 class InTheatersViewController: BaseMovieCollectionViewController, UICollectionViewDataSource {
     
     let moviesViewModel = MoviesInTheatersViewModel()
@@ -18,28 +18,45 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
+        /**
+        *  Begin loading signal executed when the network request is started initialy
+        *
+        *  @param MainScheduler.sharedInstance Main thread
+        *
+        *  @return
+        */
         self.moviesViewModel.beginLoadingSignal >- observeOn(MainScheduler.sharedInstance) >- subscribeNext { [unowned self] _ in
             
             self.showNetworkIndicator()
             
         }
-        
+        /**
+        *  End loading signal executed when the request has ended
+        *
+        *  @param MainScheduler.sharedInstance
+        *
+        *  @return
+        */
         self.moviesViewModel.endLoadingSignal >- observeOn(MainScheduler.sharedInstance) >- subscribeNext{ [unowned self] _ in
             
             self.hideNetworkIndicator()
             
         }
-        
+        /**
+        *  Update content signal executed when there is data to show
+        *
+        *  @param MainScheduler.sharedInstance
+        *
+        *  @return
+        */
         self.moviesViewModel.updateContentSignal
             >- observeOn(MainScheduler.sharedInstance)
             >- subscribe ( next: { [unowned self] _ in
-                
+                    //Reloads the collection view when we have data
                     self.collectionView.reloadData()
                 
                 }, error: { error in
-                    
+                    //Shows alert if there was an error
                     let alertController = UIAlertController(title: "Unable to fetch movies", message: error.localizedDescription, preferredStyle: .Alert)
                     
                     let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
