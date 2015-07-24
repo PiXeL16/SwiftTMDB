@@ -5,6 +5,8 @@ use_frameworks!
 #Core
 pod 'Alamofire', '~> 1.2'
 pod 'Moya', '~> 1.1.1'
+pod 'RxSwift'
+pod 'RxCocoa'
 pod 'RxViewModel', '~> 0.2.1'
 pod 'ReachabilitySwift', '~> 1.1'
 pod 'XCGLogger', '~> 2.1'

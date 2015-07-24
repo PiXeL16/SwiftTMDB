@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 greenpixels. All rights reserved.
 //
 
-import ReactiveCocoa
 import ReachabilitySwift
 import RxViewModel
 
