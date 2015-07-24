@@ -15,29 +15,45 @@ import RxCocoa
 /// View model for the MoviesInTheaters View Controller
 class MoviesInTheatersViewModel: RxViewModel {
     
+    /// Array of movies
     var movies = [Movie]()
     
+    /// Signal to be sent when network activity starts
     let beginLoadingSignal = PublishSubject<AnyObject?>()
-    
-            let endLoadingSignal = PublishSubject<AnyObject?>()
-    
+    /// Signal to be sent when network activity ends
+    let endLoadingSignal = PublishSubject<AnyObject?>()
+    /// Signal to be sent when there is data to show
     let updateContentSignal =  PublishSubject<[Movie]?>()
-    
+    /// Reachability
     let reachability = Reachability.reachabilityForInternetConnection()
     
+    /// Current page to start the request
     var currentPage = 1
     
+    /// Number of sections in the collection view
     var numbersOfSections:Int{
         get { return 1 }
     }
     
+    /**
+    Number of items in the collection
     
+    :param: section section
+    
+    :returns: movies count
+    */
     func numberOfItemsInSection(section: Int) -> Int {
         
         return self.movies.count
     }
     
+    /**
+    Get movie at an index path
     
+    :param: indexPath
+    
+    :returns:
+    */
     func movieAtIndexPath(indexPath: NSIndexPath)-> Movie{
         
         let movie = movies[indexPath.row]
@@ -55,8 +71,6 @@ class MoviesInTheatersViewModel: RxViewModel {
         super.init()
         
         reachability.startNotifier()
-        
-        
         
         self.didBecomeActive >- subscribeNext { [weak self] _ in
             
@@ -150,6 +164,7 @@ class MoviesInTheatersViewModel: RxViewModel {
     */
     func loadMore()
     {
+        //Only the first 2 pages matters
         if(currentPage <= 2)
         {
             sendNext(self.beginLoadingSignal, nil)

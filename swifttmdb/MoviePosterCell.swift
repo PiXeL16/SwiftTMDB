@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 greenpixels. All rights reserved.
 //
 
-
 import UIKit
 import SDWebImage
 /// Movie Cell of the collection View
@@ -31,10 +30,8 @@ class MoviePosterCell: UICollectionViewCell {
     /// Set the title and show the label if needed
     var title : String? {
         didSet{
-            
             self.titleLabel.hidden = false
             self.titleLabel.text = title
-            
         }
     }
     
