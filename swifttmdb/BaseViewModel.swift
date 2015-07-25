@@ -24,7 +24,7 @@ class BaseViewModel: RxViewModel {
     /// Signal to be sent when there is data to show
     let updateContentSignal =  PublishSubject<[Movie]?>()
     /// Reachability
-//    let reachability = Reachability.reachabilityForInternetConnection()
+//  let reachability = Reachability.reachabilityForInternetConnection()
     
     /// Current page to start the request
     var currentPage = 1
@@ -69,8 +69,6 @@ class BaseViewModel: RxViewModel {
         
         super.init()
         
-//        reachability.startNotifier()
-        
         self.didBecomeActive >- subscribeNext { [weak self] _ in
             
             if let strongSelf = self{
@@ -82,21 +80,7 @@ class BaseViewModel: RxViewModel {
                 sendNext(strongSelf.beginLoadingSignal, nil)
                 
             }
-            
         }
-        // Check if we have connectivity
-        //if self.reachability.isReachable(){
-        
-        //            }
-        //            else
-        //            {
-        //                if let updateSignal = self.updateContentSignal as? RACSubject {
-        //
-        //                    updateSignal.sendError(NSError(domain: "No internet connection", code: 500, userInfo: nil))
-        //                }
-        //                //TODO: Present reachbility error
-        //            }
-        //}
     }
     
     /**

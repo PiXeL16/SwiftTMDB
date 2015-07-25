@@ -47,13 +47,26 @@ extension TMDB :MoyaTarget{
         case .MoviesInTheaters(let page):
         
             let today:NSDate = NSDate()
-            
+            /**
+            *  Get movies from this month(Guess the movies of this month are the ones on theaters at the momment
+            *
+            *  @param page Number of page to get
+            *
+            *  @return
+            */
             return ["page":"\(page)",
                     "primary_release_date.gte":  today.dayAtTheStartOfMonth().simpleDateFormatString(),
                     "primary_release_date.lte":  today.dayAtTheEndOfMonth().simpleDateFormatString(),
                     "sort_by":"popularity.desc"]
             
         case .PopularMovies(let page):
+            /**
+            *  Get movies sorted by popularity that have more than 1000 votes
+            *
+            *  @param page number of page
+            *
+            *  @return <#return value description#>
+            */
             return ["page":"\(page)",
                     "sort_by":"vote_average.desc",
                     "vote_count.gte":"1000"]
