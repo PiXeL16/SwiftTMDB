@@ -94,6 +94,7 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
     
     
     
+    
     //Hide status bar
     override func prefersStatusBarHidden() -> Bool {
         return true;

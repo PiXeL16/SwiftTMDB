@@ -25,19 +25,6 @@ class MoviesInTheatersViewModel: BaseViewModel {
         
         super.init()
         
-        // Check if we have connectivity
-        //if self.reachability.isReachable(){
-        
-        //            }
-        //            else
-        //            {
-        //                if let updateSignal = self.updateContentSignal as? RACSubject {
-        //
-        //                    updateSignal.sendError(NSError(domain: "No internet connection", code: 500, userInfo: nil))
-        //                }
-        //                //TODO: Present reachbility error
-        //            }
-        //}
     }
     
     /**
