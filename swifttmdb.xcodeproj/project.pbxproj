@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C2859C8091E225A27427F7E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070B57F7688AB105ADB5C886 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8331AB2E1B62FF7F002AE345 /* PopularMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */; };
+		8331AB301B630A20002AE345 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331AB2F1B630A20002AE345 /* BaseViewModel.swift */; };
 		833204B21B44E4B000B79281 /* AlamoFireSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */; };
 		833204B41B44ED0E00B79281 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B31B44ED0E00B79281 /* StringExtensions.swift */; };
 		833204B61B45045C00B79281 /* TMDBApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B51B45045C00B79281 /* TMDBApi.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		006FFBC028B0A4FBC13FC347 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		070B57F7688AB105ADB5C886 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewModel.swift; sourceTree = "<group>"; };
+		8331AB2F1B630A20002AE345 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoFireSwiftyJSON.swift; sourceTree = "<group>"; };
 		833204B31B44ED0E00B79281 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		833204B51B45045C00B79281 /* TMDBApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBApi.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				83CC13AA1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift */,
+				8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */,
+				8331AB2F1B630A20002AE345 /* BaseViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83CC13AB1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift in Sources */,
+				8331AB301B630A20002AE345 /* BaseViewModel.swift in Sources */,
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
 				83D2500E1B62E13300F32D2B /* DateExtension.swift in Sources */,
 				83634BF91B507638009799A7 /* BaseMovieCollectionViewController.swift in Sources */,
@@ -407,6 +414,7 @@
 				833204B61B45045C00B79281 /* TMDBApi.swift in Sources */,
 				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
 				83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */,
+				8331AB2E1B62FF7F002AE345 /* PopularMoviesViewModel.swift in Sources */,
 				836E4CB51B44B5C600A8314A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

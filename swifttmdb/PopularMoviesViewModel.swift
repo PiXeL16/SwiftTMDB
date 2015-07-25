@@ -1,20 +1,19 @@
 //
-//  MoviesInTheatersViewModel.swift
+//  PopularMoviesViewModel.swift
 //  swifttmdb
 //
-//  Created by Christopher Jimenez on 7/6/15.
+//  Created by Christopher Jimenez on 7/24/15.
 //  Copyright (c) 2015 greenpixels. All rights reserved.
 //
 
-import ReachabilitySwift
+import UIKit
 import RxViewModel
-
 import RxSwift
 import RxCocoa
 
-/// View model for the MoviesInTheaters View Controller
-class MoviesInTheatersViewModel: BaseViewModel {
-    
+
+/// Popular Movies View Model
+class PopularMoviesViewModel: BaseViewModel {
     
     /**
     Init ViewModel
@@ -45,7 +44,7 @@ class MoviesInTheatersViewModel: BaseViewModel {
     */
     override func loadData(){
         
-        TMDBProvider.request(.MoviesInTheaters(self.currentPage), completion: { (data, statusCode, response, error) -> () in
+        TMDBProvider.request(.PopularMovies(self.currentPage), completion: { (data, statusCode, response, error) -> () in
             
             sendNext(self.endLoadingSignal, nil)
             
@@ -80,7 +79,7 @@ class MoviesInTheatersViewModel: BaseViewModel {
                     }
                     
                 } else {
-
+                    
                     log.error("Error parsing data")
                     
                     if let error = localError{
@@ -104,18 +103,17 @@ class MoviesInTheatersViewModel: BaseViewModel {
     */
     override func loadMore()
     {
-        //Only the first 2 pages matters
-        if(currentPage <= 2)
-        {
-            sendNext(self.beginLoadingSignal, nil)
         
-            self.currentPage++
-            self.loadData()
+        sendNext(self.beginLoadingSignal, nil)
             
-        }
+        self.currentPage++
+        self.loadData()
         
     }
     
     
+
     
+    
+   
 }

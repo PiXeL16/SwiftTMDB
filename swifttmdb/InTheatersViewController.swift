@@ -14,6 +14,7 @@ import RxCocoa
 class InTheatersViewController: BaseMovieCollectionViewController, UICollectionViewDataSource {
     
     let moviesViewModel = MoviesInTheatersViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

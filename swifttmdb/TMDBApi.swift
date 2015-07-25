@@ -54,7 +54,9 @@ extension TMDB :MoyaTarget{
                     "sort_by":"popularity.desc"]
             
         case .PopularMovies(let page):
-            return ["page":"\(page)"]
+            return ["page":"\(page)",
+                    "sort_by":"vote_average.desc",
+                    "vote_count.gte":"1000"]
         default:
             return [:]
         }
