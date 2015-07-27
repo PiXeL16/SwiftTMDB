@@ -24,7 +24,7 @@ class BaseViewModel: RxViewModel {
     /// Signal to be sent when there is data to show
     let updateContentSignal =  PublishSubject<[Movie]?>()
     /// Reachability
-//  let reachability = Reachability.reachabilityForInternetConnection()
+    //let reachability = Reachability.reachabilityForInternetConnection()
     
     /// Current page to start the request
     var currentPage = 1

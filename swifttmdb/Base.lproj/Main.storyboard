@@ -39,7 +39,7 @@
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="wrH-47-ZJM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="In Theaters" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="In Theaters" image="inTheaters" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="collectionView" destination="PXz-jy-zjU" id="w7e-PH-83s"/>
                         <outlet property="collectionViewLayout" destination="HEz-lJ-DKm" id="pQq-ru-9fu"/>
@@ -84,7 +84,7 @@
                             <constraint firstItem="T63-8M-VDB" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="PtK-Oq-qey"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Popular" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Popular" image="popular" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="collectionView" destination="T63-8M-VDB" id="bv4-of-544"/>
                         <outlet property="collectionViewLayout" destination="1N1-ua-saN" id="jAI-w6-CBo"/>
@@ -115,8 +115,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="inTheaters" width="32" height="32"/>
+        <image name="popular" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="1" green="0.5754749468" blue="0.076872545910000006" alpha="1" colorSpace="calibratedRGB"/>
 </document>
