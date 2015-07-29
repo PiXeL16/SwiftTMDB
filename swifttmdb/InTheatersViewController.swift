@@ -92,15 +92,6 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
         return UIStatusBarStyle.LightContent
     }
     
-    
-    
-    
-    //Hide status bar
-    override func prefersStatusBarHidden() -> Bool {
-        return true;
-    }
-    
-    
     //MARK:UICollectionViewDataSource
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -143,17 +134,37 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
     // MARK: UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //        // Select
-        //        let cell = collectionView.cellForItemAtIndexPath(indexPath) as GifViewCell
-        //
-        //        self.selectedImageView = cell.imageView
-        //        self.selectedGif = images[Int(indexPath.row)]
-        //
-        //        self.performSegueWithIdentifier("showDetail", sender: nil)
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        self.performSegueWithIdentifier("showDetail", sender: cell)
+        
+    }
+    
+    /**
+    Prepare for segue
+    
+    :param: segue  description
+    :param: sender AnyObject
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showDetail"{
+            if let movieDetailViewController = segue.destinationViewController as? MovieDetailViewController{
+                
+                if let senderCell = sender as? UICollectionViewCell{
+                    if let indexPath = collectionView!.indexPathForCell(senderCell){
+                        let movie:Movie = self.moviesViewModel.movieAtIndexPath(indexPath)
+                        
+                        let movieViewModel = MovieViewModel(movie: movie)
+                        
+                        movieDetailViewController.movieViewModel = movieViewModel
+                    }
+                }
+            }
+        }
     }
 
-    
-    
     /*
     // MARK: - Navigation
 

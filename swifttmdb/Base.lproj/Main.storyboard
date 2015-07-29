@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--In Theaters-->
+        <!--In Theaters View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="InTheatersViewController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,17 +39,36 @@
                             <constraint firstItem="PXz-jy-zjU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="wrH-47-ZJM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="In Theaters" image="inTheaters" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="WQG-ww-hXD"/>
                     <connections>
                         <outlet property="collectionView" destination="PXz-jy-zjU" id="w7e-PH-83s"/>
                         <outlet property="collectionViewLayout" destination="HEz-lJ-DKm" id="pQq-ru-9fu"/>
+                        <segue destination="MN9-aP-lXg" kind="show" identifier="showDetail" id="4Um-Bv-rlJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1462" y="-344"/>
         </scene>
         <!--Popular-->
+        <scene sceneID="Rca-wH-43f">
+            <objects>
+                <navigationController id="FaO-6R-auN" customClass="MoviesNavigationController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="popular" id="mVq-nS-dIb"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="380-KV-t3P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="5bd-S5-B8N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXw-Qa-IhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="536"/>
+        </scene>
+        <!--Popular View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="PopularViewController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,15 +103,119 @@
                             <constraint firstItem="T63-8M-VDB" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="PtK-Oq-qey"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Popular" image="popular" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="Fgu-RW-dpM"/>
                     <connections>
                         <outlet property="collectionView" destination="T63-8M-VDB" id="bv4-of-544"/>
                         <outlet property="collectionViewLayout" destination="1N1-ua-saN" id="jAI-w6-CBo"/>
+                        <segue destination="MN9-aP-lXg" kind="show" identifier="showDetail" id="r3Q-az-T87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1470" y="495"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="TaQ-S3-tsB">
+            <objects>
+                <viewController id="MN9-aP-lXg" customClass="MovieDetailViewController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPd-Hn-cK0"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Bw-QD-M8W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="76w-Vp-sL9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="let-D9-uxA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bae-gb-HIM" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="457"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zYg-td-eZd">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="MGS-ow-Zyl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4W-YO-Vik">
+                                                <rect key="frame" x="8" y="254" width="584" height="183"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="0vw-Xz-pap"/>
+                                                </constraints>
+                                                <string key="text">Bacon ipsum dolor amet jowl ground round pastrami andouille, tenderloin tail kielbasa alcatra. Venison pork belly sirloin ground round strip steak. Turkey pork loin pastrami jowl pork chop. Turkey tail prosciutto doner andouille shoulder alcatra filet mignon ball tip. Frankfurter biltong corned beef short loin swine turkey. Ribeye drumstick sirloin ham hock, pork chop turducken capicola bacon beef. Alcatra doner bresaola spare ribs shoulder cow ham hock short ribs tongue kevin shank ground round.
+
+</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hke-3u-5JD">
+                                                <rect key="frame" x="21" y="14" width="134" height="201"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="201" id="AgO-72-dPE"/>
+                                                    <constraint firstAttribute="width" constant="134" id="XEX-Wh-vP3"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="U4W-YO-Vik" secondAttribute="bottom" constant="20" symbolic="YES" id="2ma-0r-3tx"/>
+                                            <constraint firstItem="zYg-td-eZd" firstAttribute="top" secondItem="Bae-gb-HIM" secondAttribute="top" id="Fpo-c8-tSw"/>
+                                            <constraint firstItem="hke-3u-5JD" firstAttribute="top" secondItem="Bae-gb-HIM" secondAttribute="top" constant="14" id="Om2-dS-KJM"/>
+                                            <constraint firstItem="U4W-YO-Vik" firstAttribute="top" secondItem="zYg-td-eZd" secondAttribute="bottom" constant="14" id="PKE-Ow-b6q"/>
+                                            <constraint firstItem="hke-3u-5JD" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" constant="21" id="dLC-GV-J3F"/>
+                                            <constraint firstItem="U4W-YO-Vik" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" constant="8" id="eoO-iL-Qal"/>
+                                            <constraint firstAttribute="trailing" secondItem="zYg-td-eZd" secondAttribute="trailing" id="gqq-JN-JSy"/>
+                                            <constraint firstItem="zYg-td-eZd" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" id="guu-ys-9sf"/>
+                                            <constraint firstAttribute="trailing" secondItem="U4W-YO-Vik" secondAttribute="trailing" constant="8" id="riH-r7-jtR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Bae-gb-HIM" firstAttribute="top" secondItem="let-D9-uxA" secondAttribute="top" id="Cx6-Lx-DZQ"/>
+                                    <constraint firstItem="Bae-gb-HIM" firstAttribute="leading" secondItem="let-D9-uxA" secondAttribute="leading" id="EPf-Zi-qkU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bae-gb-HIM" secondAttribute="trailing" id="K4F-ot-SG5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bae-gb-HIM" secondAttribute="bottom" id="avh-yT-3TS"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="let-D9-uxA" secondAttribute="bottom" id="79R-Zf-W0N"/>
+                            <constraint firstItem="let-D9-uxA" firstAttribute="top" secondItem="76w-Vp-sL9" secondAttribute="top" id="OXw-Ji-DDs"/>
+                            <constraint firstItem="let-D9-uxA" firstAttribute="leading" secondItem="76w-Vp-sL9" secondAttribute="leading" id="XkK-Fj-zZM"/>
+                            <constraint firstAttribute="trailing" secondItem="let-D9-uxA" secondAttribute="trailing" id="fo4-Fw-OfV"/>
+                            <constraint firstItem="Bae-gb-HIM" firstAttribute="width" secondItem="76w-Vp-sL9" secondAttribute="width" id="ifs-Hb-DB9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieBannerImageView" destination="zYg-td-eZd" id="hFa-ql-nS3"/>
+                        <outlet property="movieDescriptionLabel" destination="U4W-YO-Vik" id="1y9-uH-XRP"/>
+                        <outlet property="moviePosterImageView" destination="hke-3u-5JD" id="429-d7-ZCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEh-cM-4Gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="98"/>
+        </scene>
+        <!--In Theaters-->
+        <scene sceneID="Uch-Pz-f2H">
+            <objects>
+                <navigationController id="qvR-f5-UD8" customClass="MoviesNavigationController" customModule="swifttmdb" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="In Theaters" image="inTheaters" id="ar3-1e-7C5"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4EE-y2-mCt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="alv-pr-gXV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncV-Le-jcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-362"/>
         </scene>
         <!--SwiftTMDB Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -105,8 +228,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="qvR-f5-UD8" kind="relationship" relationship="viewControllers" id="fSD-3M-W1d"/>
+                        <segue destination="FaO-6R-auN" kind="relationship" relationship="viewControllers" id="9Z7-Ii-jkG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -118,5 +241,8 @@
         <image name="inTheaters" width="32" height="32"/>
         <image name="popular" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Um-Bv-rlJ"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.5754749468" blue="0.076872545910000006" alpha="1" colorSpace="calibratedRGB"/>
 </document>

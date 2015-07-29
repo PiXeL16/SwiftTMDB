@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C2859C8091E225A27427F7E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070B57F7688AB105ADB5C886 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8331AB2E1B62FF7F002AE345 /* PopularMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */; };
-		8331AB301B630A20002AE345 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331AB2F1B630A20002AE345 /* BaseViewModel.swift */; };
+		8331AB301B630A20002AE345 /* BaseMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331AB2F1B630A20002AE345 /* BaseMoviesViewModel.swift */; };
 		833204B21B44E4B000B79281 /* AlamoFireSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */; };
 		833204B41B44ED0E00B79281 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B31B44ED0E00B79281 /* StringExtensions.swift */; };
 		833204B61B45045C00B79281 /* TMDBApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833204B51B45045C00B79281 /* TMDBApi.swift */; };
@@ -28,6 +28,9 @@
 		836E4CAF1B449C4200A8314A /* MoviePosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */; };
 		836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */; };
 		836E4CB51B44B5C600A8314A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4CB41B44B5C600A8314A /* Constants.swift */; };
+		8373E5BB1B66C85700525D90 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373E5BA1B66C85700525D90 /* MovieDetailViewController.swift */; };
+		8373E5BD1B66CECB00525D90 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373E5BC1B66CECB00525D90 /* MovieViewModel.swift */; };
+		8373E5C31B66F29F00525D90 /* MoviesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373E5C21B66F29F00525D90 /* MoviesNavigationController.swift */; };
 		837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8871B43597E008CBD5C /* InTheatersViewController.swift */; };
 		837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AE8891B4363A5008CBD5C /* PopularViewController.swift */; };
 		837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837DB7D41B450D7500A537F5 /* JSONAble.swift */; };
@@ -49,7 +52,7 @@
 		006FFBC028B0A4FBC13FC347 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		070B57F7688AB105ADB5C886 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewModel.swift; sourceTree = "<group>"; };
-		8331AB2F1B630A20002AE345 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		8331AB2F1B630A20002AE345 /* BaseMoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMoviesViewModel.swift; sourceTree = "<group>"; };
 		833204B11B44E4B000B79281 /* AlamoFireSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoFireSwiftyJSON.swift; sourceTree = "<group>"; };
 		833204B31B44ED0E00B79281 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		833204B51B45045C00B79281 /* TMDBApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBApi.swift; sourceTree = "<group>"; };
@@ -73,6 +76,9 @@
 		836E4CAE1B449C4200A8314A /* MoviePosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCell.swift; sourceTree = "<group>"; };
 		836E4CB21B44AFDA00A8314A /* TMDBRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBRouter.swift; sourceTree = "<group>"; };
 		836E4CB41B44B5C600A8314A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8373E5BA1B66C85700525D90 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		8373E5BC1B66CECB00525D90 /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		8373E5C21B66F29F00525D90 /* MoviesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesNavigationController.swift; sourceTree = "<group>"; };
 		837AE8871B43597E008CBD5C /* InTheatersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheatersViewController.swift; sourceTree = "<group>"; };
 		837AE8891B4363A5008CBD5C /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		837DB7D41B450D7500A537F5 /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 				837AE8891B4363A5008CBD5C /* PopularViewController.swift */,
 				83634BEF1B4C76FE009799A7 /* SwiftTMDBTabBarController.swift */,
 				83634BF81B507638009799A7 /* BaseMovieCollectionViewController.swift */,
+				8373E5BA1B66C85700525D90 /* MovieDetailViewController.swift */,
+				8373E5C21B66F29F00525D90 /* MoviesNavigationController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -229,7 +237,8 @@
 			children = (
 				83CC13AA1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift */,
 				8331AB2D1B62FF7F002AE345 /* PopularMoviesViewModel.swift */,
-				8331AB2F1B630A20002AE345 /* BaseViewModel.swift */,
+				8331AB2F1B630A20002AE345 /* BaseMoviesViewModel.swift */,
+				8373E5BC1B66CECB00525D90 /* MovieViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -397,9 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83CC13AB1B4B2D2C00D67174 /* MoviesInTheatersViewModel.swift in Sources */,
-				8331AB301B630A20002AE345 /* BaseViewModel.swift in Sources */,
+				8331AB301B630A20002AE345 /* BaseMoviesViewModel.swift in Sources */,
 				836E4CB31B44AFDA00A8314A /* TMDBRouter.swift in Sources */,
 				83D2500E1B62E13300F32D2B /* DateExtension.swift in Sources */,
+				8373E5BB1B66C85700525D90 /* MovieDetailViewController.swift in Sources */,
 				83634BF91B507638009799A7 /* BaseMovieCollectionViewController.swift in Sources */,
 				837AE88A1B4363A5008CBD5C /* PopularViewController.swift in Sources */,
 				837DB7D51B450D7500A537F5 /* JSONAble.swift in Sources */,
@@ -414,6 +424,8 @@
 				833204B61B45045C00B79281 /* TMDBApi.swift in Sources */,
 				837AE8881B43597E008CBD5C /* InTheatersViewController.swift in Sources */,
 				83634BF01B4C76FE009799A7 /* SwiftTMDBTabBarController.swift in Sources */,
+				8373E5BD1B66CECB00525D90 /* MovieViewModel.swift in Sources */,
+				8373E5C31B66F29F00525D90 /* MoviesNavigationController.swift in Sources */,
 				8331AB2E1B62FF7F002AE345 /* PopularMoviesViewModel.swift in Sources */,
 				836E4CB51B44B5C600A8314A /* Constants.swift in Sources */,
 			);

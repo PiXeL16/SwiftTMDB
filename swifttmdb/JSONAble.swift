@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JSONAble: NSObject {
+public class JSONAble: NSObject {
     
     internal class func fromJSON([String:AnyObject]) -> JSONAble{
         return JSONAble()

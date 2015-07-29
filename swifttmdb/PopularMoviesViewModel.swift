@@ -13,7 +13,7 @@ import RxCocoa
 
 
 /// Popular Movies View Model
-class PopularMoviesViewModel: BaseViewModel {
+public class PopularMoviesViewModel: BaseMoviesViewModel {
     
     /**
     Init ViewModel

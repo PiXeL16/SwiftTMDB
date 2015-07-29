@@ -102,6 +102,9 @@ class BaseMovieCollectionViewController: UIViewController,UICollectionViewDelega
         return CGSizeMake(50, 50)
     }
     
+    
+    
+    
 }
 
 

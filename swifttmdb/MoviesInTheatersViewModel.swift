@@ -13,11 +13,11 @@ import RxSwift
 import RxCocoa
 
 /// View model for the MoviesInTheaters View Controller
-class MoviesInTheatersViewModel: BaseViewModel {
+public class MoviesInTheatersViewModel: BaseMoviesViewModel {
     
     
     /**
-    Init ViewModel
+    Init ViewModels
     
     :returns: self
     */

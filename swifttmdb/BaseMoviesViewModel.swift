@@ -12,17 +12,17 @@ import RxViewModel
 import RxSwift
 import RxCocoa
 
-class BaseViewModel: RxViewModel {
+public class BaseMoviesViewModel: RxViewModel {
     
     /// Array of movies
-    var movies = [Movie]()
+    public var movies = [Movie]()
     
     /// Signal to be sent when network activity starts
-    let beginLoadingSignal = PublishSubject<AnyObject?>()
+    public let beginLoadingSignal = PublishSubject<AnyObject?>()
     /// Signal to be sent when network activity ends
-    let endLoadingSignal = PublishSubject<AnyObject?>()
+    public let endLoadingSignal = PublishSubject<AnyObject?>()
     /// Signal to be sent when there is data to show
-    let updateContentSignal =  PublishSubject<[Movie]?>()
+    public let updateContentSignal =  PublishSubject<[Movie]?>()
     /// Reachability
     //let reachability = Reachability.reachabilityForInternetConnection()
     

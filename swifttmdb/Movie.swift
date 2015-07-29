@@ -10,14 +10,14 @@ import UIKit
 import SwiftyJSON
 
 /// Movie Model 
-class Movie:JSONAble {
+public class Movie:JSONAble {
     
-    var id: Int = 0
-    var title: String
-    var overview: String
-    var releaseDate: String?
-    var backdropImagePath: NSURL?
-    var posterImagePath: NSURL?
+    public var id: Int = 0
+    public var title: String
+    public var overview: String
+    public var releaseDate: String?
+    public var backdropImagePath: NSURL?
+    public var posterImagePath: NSURL?
     
     /**
     Inits Model with values
