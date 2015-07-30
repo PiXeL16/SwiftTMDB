@@ -1,4 +1,10 @@
 # SwiftTMDB
-A sample iOS movie app written in Swift using MVVC,  Alamofire, Moya, SwiftyJSON, etc
+A sample movie app that I build to play with Swift, Alamofire, Moya, RxViewModel, RxSwift, etc
 
-WIP
+## iPhone
+![](web/iphonePortrait.png)
+![](web/iphoneLandscape.png)
+![](web/iphoneDetaip.png)
+
+## iPad
+![](web/ipad.png)
