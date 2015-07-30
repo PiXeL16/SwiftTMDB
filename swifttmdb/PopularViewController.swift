@@ -72,6 +72,9 @@ class PopularViewController: BaseMovieCollectionViewController, UICollectionView
             })
         
         
+        //TODO: Get this from strings
+        self.title = "Popular"
+        
         // Trigger first load
         moviesViewModel.active = true
         

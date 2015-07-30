@@ -72,6 +72,9 @@ class InTheatersViewController: BaseMovieCollectionViewController, UICollectionV
             })
         
         
+        //TODO: Get this from strings
+        self.title = "In Theaters"
+        
         // Trigger first load
         moviesViewModel.active = true
        

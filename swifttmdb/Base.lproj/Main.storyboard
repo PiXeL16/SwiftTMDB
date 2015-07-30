@@ -135,7 +135,10 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zYg-td-eZd">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="MGS-ow-Zyl"/>
+                                                    <constraint firstAttribute="height" constant="240" id="MGS-ow-Zyl">
+                                                        <variation key="heightClass=compact" constant="380"/>
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4W-YO-Vik">
@@ -157,17 +160,41 @@
                                                     <constraint firstAttribute="width" constant="134" id="XEX-Wh-vP3"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEX-UT-qAV">
+                                                <rect key="frame" x="556" y="194" width="30" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="2PA-BS-vcV"/>
+                                                    <constraint firstAttribute="width" constant="30" id="UG2-Qs-dvX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" red="1" green="0.5754749468" blue="0.076872545910000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-k6-FDY">
+                                                <rect key="frame" x="528" y="193" width="28" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="9H2-uJ-nB6"/>
+                                                    <constraint firstAttribute="width" constant="28" id="PZG-e1-APA"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="U4W-YO-Vik" secondAttribute="bottom" constant="20" symbolic="YES" id="2ma-0r-3tx"/>
                                             <constraint firstItem="zYg-td-eZd" firstAttribute="top" secondItem="Bae-gb-HIM" secondAttribute="top" id="Fpo-c8-tSw"/>
                                             <constraint firstItem="hke-3u-5JD" firstAttribute="top" secondItem="Bae-gb-HIM" secondAttribute="top" constant="14" id="Om2-dS-KJM"/>
-                                            <constraint firstItem="U4W-YO-Vik" firstAttribute="top" secondItem="zYg-td-eZd" secondAttribute="bottom" constant="14" id="PKE-Ow-b6q"/>
+                                            <constraint firstItem="U4W-YO-Vik" firstAttribute="top" secondItem="zYg-td-eZd" secondAttribute="bottom" constant="14" id="PKE-Ow-b6q">
+                                                <variation key="heightClass=compact" constant="-126"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="-146"/>
+                                            </constraint>
+                                            <constraint firstItem="uEX-UT-qAV" firstAttribute="leading" secondItem="7EO-k6-FDY" secondAttribute="trailing" id="QcO-mR-aTe"/>
                                             <constraint firstItem="hke-3u-5JD" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" constant="21" id="dLC-GV-J3F"/>
                                             <constraint firstItem="U4W-YO-Vik" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" constant="8" id="eoO-iL-Qal"/>
                                             <constraint firstAttribute="trailing" secondItem="zYg-td-eZd" secondAttribute="trailing" id="gqq-JN-JSy"/>
                                             <constraint firstItem="zYg-td-eZd" firstAttribute="leading" secondItem="Bae-gb-HIM" secondAttribute="leading" id="guu-ys-9sf"/>
+                                            <constraint firstItem="uEX-UT-qAV" firstAttribute="top" secondItem="7EO-k6-FDY" secondAttribute="top" constant="1" id="i2t-Yb-dUj"/>
+                                            <constraint firstItem="uEX-UT-qAV" firstAttribute="top" secondItem="Bae-gb-HIM" secondAttribute="top" constant="194" id="iDE-rt-zMX"/>
+                                            <constraint firstAttribute="trailing" secondItem="uEX-UT-qAV" secondAttribute="trailing" constant="14" id="mvL-DD-9cD"/>
                                             <constraint firstAttribute="trailing" secondItem="U4W-YO-Vik" secondAttribute="trailing" constant="8" id="riH-r7-jtR"/>
                                         </constraints>
                                     </view>
@@ -193,6 +220,8 @@
                         <outlet property="movieBannerImageView" destination="zYg-td-eZd" id="hFa-ql-nS3"/>
                         <outlet property="movieDescriptionLabel" destination="U4W-YO-Vik" id="1y9-uH-XRP"/>
                         <outlet property="moviePosterImageView" destination="hke-3u-5JD" id="429-d7-ZCe"/>
+                        <outlet property="ratingLabel" destination="uEX-UT-qAV" id="xn0-a2-lZ0"/>
+                        <outlet property="starImageView" destination="7EO-k6-FDY" id="tD0-2Y-lKj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEh-cM-4Gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +269,7 @@
     <resources>
         <image name="inTheaters" width="32" height="32"/>
         <image name="popular" width="32" height="32"/>
+        <image name="star" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Um-Bv-rlJ"/>

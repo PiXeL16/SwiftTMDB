@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-
+/// Movie detail class
 class MovieDetailViewController: UIViewController {
     
     var movieViewModel:MovieViewModel? = nil
@@ -20,9 +20,14 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var movieDescriptionLabel: UILabel!
 
+    @IBOutlet weak var starImageView: UIImageView!
+    
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /// If we have a view model initialize view with values
         if let viewModel = self.movieViewModel{
             
             if let movie = viewModel.movie{
@@ -34,6 +39,10 @@ class MovieDetailViewController: UIViewController {
                 self.moviePosterImageView.sd_setImageWithURL(movie.posterImagePath)
                 
                 self.movieDescriptionLabel.text = movie.overview
+                
+                self.starImageView.image = self.starImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+                
+                self.ratingLabel.text  = String(format:"%.1f", movie.rating!)
                 
             }
             //TODO: Add negative case in case movie is not present

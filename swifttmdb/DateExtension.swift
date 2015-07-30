@@ -24,11 +24,11 @@ public extension NSDate {
     }
     
     /**
-    Return the first day of the month
+     Return a new NSDate object of the first day of the month
     
-    :returns: the first day of the montn
+    :returns: NSDate
     */
-    func dayAtTheStartOfMonth() -> NSDate
+    func dateAtTheStartOfMonth() -> NSDate
     {
         
         //Builds current calendar
@@ -44,11 +44,11 @@ public extension NSDate {
     }
     
     /**
-    Returns the last day of the montn
+     Return a new NSDate object of the last day of the month
     
-    :returns: the last day of the month
+    :returns: NSDate
     */
-    func dayAtTheEndOfMonth() -> NSDate {
+    func dateAtTheEndOfMonth() -> NSDate {
         
         //Builds current calendar
         let calendar = NSCalendar.currentCalendar()

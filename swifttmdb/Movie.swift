@@ -18,6 +18,7 @@ public class Movie:JSONAble {
     public var releaseDate: String?
     public var backdropImagePath: NSURL?
     public var posterImagePath: NSURL?
+    public var rating : Double?
     
     /**
     Inits Model with values
@@ -28,10 +29,10 @@ public class Movie:JSONAble {
     :param: releaseDate       movie release date
     :param: backdropImagePath movie backdrop image path
     :param: posterImagePath   movie poster image path
-    
+    :param: rating            movie average rating
     :returns: <#return value description#>
     */
-    init(id: Int, title: String, overview: String, releaseDate: String?, backdropImagePath: NSURL?, posterImagePath: NSURL?){
+    init(id: Int, title: String, overview: String, releaseDate: String?, backdropImagePath: NSURL?, posterImagePath: NSURL?, rating :Double?){
         
         self.id                = id
         self.title             = title
@@ -39,6 +40,7 @@ public class Movie:JSONAble {
         self.releaseDate       = releaseDate
         self.backdropImagePath = backdropImagePath
         self.posterImagePath   = posterImagePath
+        self.rating            = rating
     }
     
     /// Parse movie from Json Representation
@@ -54,8 +56,10 @@ public class Movie:JSONAble {
 
         let backdropImagePath = TMDB.createImageURL(image: json["backdrop_path"].stringValue, imageWidth: 342)
         let posterImagePath   = TMDB.createImageURL(image: json["poster_path"].stringValue, imageWidth: 342)
+        
+        let rating            = json["vote_average"].doubleValue
 
-        return Movie(id: id, title: title, overview: overview, releaseDate: releaseDate, backdropImagePath: backdropImagePath, posterImagePath: posterImagePath)
+        return Movie(id: id, title: title, overview: overview, releaseDate: releaseDate, backdropImagePath: backdropImagePath, posterImagePath: posterImagePath, rating: rating)
 
     }
     
