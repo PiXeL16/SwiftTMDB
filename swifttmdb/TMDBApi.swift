@@ -57,7 +57,8 @@ extension TMDB :MoyaTarget{
             return ["page":"\(page)",
                     "primary_release_date.gte":  today.dateAtTheStartOfMonth().simpleDateFormatString(),
                     "primary_release_date.lte":  today.dateAtTheEndOfMonth().simpleDateFormatString(),
-                    "sort_by":"popularity.desc"]
+                    "sort_by":"popularity.desc",
+                    "vote_count.gte":"1"]
             
         case .PopularMovies(let page):
             /**
