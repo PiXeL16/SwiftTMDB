@@ -6,15 +6,15 @@ PODS:
   - Moya/Core (1.1.1):
     - Alamofire (~> 1.2.0)
   - ReachabilitySwift (1.1)
-  - RxCocoa (1.8):
+  - RxCocoa (1.9):
     - RxSwift
-  - RxSwift (1.8)
-  - RxViewModel (0.2.1):
-    - RxCocoa (~> 1.8)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
-  - SwiftyJSON (2.2.0)
+  - RxSwift (1.9)
+  - RxViewModel (1.1.0):
+    - RxCocoa (~> 1.9)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SwiftyJSON (2.2.1)
   - XCGLogger (2.1.1)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ DEPENDENCIES:
   - ReachabilitySwift (~> 1.1)
   - RxCocoa
   - RxSwift
-  - RxViewModel (~> 0.2.1)
+  - RxViewModel
   - SDWebImage (~> 3.7)
   - SwiftyJSON (~> 2.2.0)
   - XCGLogger (~> 2.1)
@@ -41,13 +41,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
   DTIActivityIndicator: ace0cc993398c52fecf8babc1aa7415ec1b0fb08
-  Moya: ee0c8da3abb87f2a46bce384bd42ca13260e690e
+  Moya: 1218cc00c7b290a64b06af0a64c62d0d9b4d164a
   ReachabilitySwift: 1e53abddb01111deac0d229dabdb8bb043567b18
-  RxCocoa: 596208e539333929faed6b4c98f8acb9e3dc042c
-  RxSwift: 779bad8fccc06b5c22080af13dfeaeab2ee378c5
-  RxViewModel: 2ec4271032adac02ef52de989f56e7e8c4c99ca3
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
+  RxCocoa: 6ef9cc14418d5bbda067550e46f5949a3eeca37d
+  RxSwift: 204bf4262908521aa815ec850d93e87e9d635dd5
+  RxViewModel: 35e6322bef4a2dddaa9672fa99163acc9101fff1
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
   XCGLogger: 8df921bcf88abbd511b887c8febde8163d624d81
 
 COCOAPODS: 0.38.1
