@@ -3,8 +3,8 @@ platform :ios, '8.2'
 use_frameworks!
 
 #Core
-pod 'Alamofire', '~> 1.2'
-pod 'Moya', '~> 1.1.1'
+pod 'Alamofire'
+pod 'Moya'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxViewModel'

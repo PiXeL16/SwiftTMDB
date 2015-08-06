@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (1.2.3)
+  - Alamofire (1.3.0)
   - DTIActivityIndicator (0.1.0)
-  - Moya (1.1.1):
-    - Moya/Core (= 1.1.1)
-  - Moya/Core (1.1.1):
-    - Alamofire (~> 1.2.0)
+  - Moya (2.0.1):
+    - Moya/Core (= 2.0.1)
+  - Moya/Core (2.0.1):
+    - Alamofire (~> 1.3.0)
   - ReachabilitySwift (1.1)
   - RxCocoa (1.9):
     - RxSwift
@@ -18,9 +18,9 @@ PODS:
   - XCGLogger (2.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 1.2)
+  - Alamofire
   - DTIActivityIndicator (from `https://github.com/esttorhe/DTIActivityIndicatorView-Swift`)
-  - Moya (~> 1.1.1)
+  - Moya
   - ReachabilitySwift (~> 1.1)
   - RxCocoa
   - RxSwift
@@ -39,12 +39,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/esttorhe/DTIActivityIndicatorView-Swift
 
 SPEC CHECKSUMS:
-  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  Alamofire: 220403a8d5840e0b4c946a6fbaf209dbca124282
   DTIActivityIndicator: ace0cc993398c52fecf8babc1aa7415ec1b0fb08
-  Moya: 1218cc00c7b290a64b06af0a64c62d0d9b4d164a
+  Moya: 4f7d729726dff9a83d910af31b02768cc933e357
   ReachabilitySwift: 1e53abddb01111deac0d229dabdb8bb043567b18
   RxCocoa: 6ef9cc14418d5bbda067550e46f5949a3eeca37d
-  RxSwift: 204bf4262908521aa815ec850d93e87e9d635dd5
+  RxSwift: cbc8c34c6aaffda5d3c44a2a1c7e822948b78896
   RxViewModel: 35e6322bef4a2dddaa9672fa99163acc9101fff1
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
