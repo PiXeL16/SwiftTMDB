@@ -22,9 +22,9 @@ extension Request {
     
     :returns: The request.
     */
-    public func responseSwiftyJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, SwiftyJSON.JSON, NSError?) -> Void) -> Self {
-        return responseSwiftyJSON(queue:nil, options:NSJSONReadingOptions.AllowFragments, completionHandler:completionHandler)
-    }
+//    public func responseSwiftyJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, SwiftyJSON.JSON, NSError?) -> Void) -> Self {
+//        return responseSwiftyJSON(queue:nil, options:NSJSONReadingOptions.AllowFragments, completionHandler:completionHandler)
+//    }
     
     /**
     Adds a handler to be called once the request has finished.
@@ -35,24 +35,24 @@ extension Request {
     
     :returns: The request.
     */
-    public func responseSwiftyJSON(queue: dispatch_queue_t? = nil, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
-        
-        return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                
-                var responseJSON: JSON
-                if error != nil || object == nil{
-                    responseJSON = JSON.nullJSON
-                } else {
-                    responseJSON = SwiftyJSON.JSON(object!)
-                }
-                
-                dispatch_async(queue ?? dispatch_get_main_queue(), {
-                    completionHandler(self.request, self.response, responseJSON, error)
-                })
-            })
-        })
-    }
+//    public func responseSwiftyJSON(queue: dispatch_queue_t? = nil, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
+//        
+//        return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
+//            
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//                
+//                var responseJSON: JSON
+//                if error != nil || object == nil{
+//                    responseJSON = JSON.nullJSON
+//                } else {
+//                    responseJSON = SwiftyJSON.JSON(object!)
+//                }
+//                
+//                dispatch_async(queue ?? dispatch_get_main_queue(), {
+//                    completionHandler(self.request, self.response, responseJSON, error)
+//                })
+//            })
+//        })
+//    }
 }
 

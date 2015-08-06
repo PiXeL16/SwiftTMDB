@@ -11,7 +11,7 @@ import Moya
 
 // MARK: - Provider setup
 
-let TMDBProvider = MoyaProvider(endpointsClosure: endpointClosure)
+let TMDBProvider = MoyaProvider(endpointClosure: endpointClosure)
 //
 //let TMDBProvider = MoyaProvider<TMDB>()
 
